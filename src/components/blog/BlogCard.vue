@@ -7,14 +7,15 @@
     </RouterLink>
     <div class="p-5 flex flex-col flex-1">
       <div class="flex items-center gap-3 text-xs text-gray-400 mb-3">
-        <span class="bangla">{{ post.date }}</span>
+        <span>{{ post.date }}</span>
         <span>·</span>
         <span class="bangla">{{ post.readTime }} পড়া</span>
       </div>
       <RouterLink :to="`/blog/${post.slug}`">
-        <h3 class="font-display font-bold text-forest-900 text-lg leading-snug hover:text-forest-700 transition-colors bangla line-clamp-2 mb-3">
+        <h3 class="font-display font-bold text-forest-900 text-lg leading-snug hover:text-forest-700 transition-colors bangla line-clamp-2">
           {{ post.title }}
         </h3>
+        <div class="text-gray-500 line-clamp-2 mb-3">{{ post.titleEn }}</div>
       </RouterLink>
       <p class="text-gray-500 text-sm bangla leading-relaxed line-clamp-3 flex-1">{{ post.excerpt }}</p>
       <div class="flex items-center justify-between mt-4 pt-4 border-t border-forest-100">

@@ -45,7 +45,7 @@
       <!-- Name -->
       <RouterLink :to="`/products/${product.id}`">
         <h3 class="font-display font-bold text-forest-900 text-base leading-snug hover:text-forest-700 transition-colors bangla line-clamp-2">
-          {{ product.name }}
+          {{ product.name }} ( {{ product.nameEn }})
         </h3>
       </RouterLink>
       <!-- Weight -->
@@ -63,7 +63,7 @@
 
       <!-- Price -->
       <div class="flex items-baseline gap-2 mt-3">
-        <span class="text-xl font-display font-bold text-forest-900">৳{{ product.price }}</span>
+        <span class="text-xl font-bold text-forest-900">৳{{ product.price }}</span>
         <span v-if="product.originalPrice > product.price" class="text-sm text-gray-400 line-through">৳{{ product.originalPrice }}</span>
       </div>
 

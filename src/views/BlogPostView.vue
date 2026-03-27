@@ -14,6 +14,7 @@
           <h1 class="font-display text-3xl md:text-5xl font-bold text-forest-900 bangla max-w-3xl leading-tight">
             {{ post.title }}
           </h1>
+          <div class="text-2xl">{{ post.titleEn }}</div>
         </div>
       </div>
     </div>

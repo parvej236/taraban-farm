@@ -79,7 +79,7 @@
       <div v-if="!cartStore.isEmpty" class="border-t border-forest-100 px-6 py-6 bg-white">
         <div class="flex justify-between items-center mb-4">
           <span class="text-gray-600 bangla font-medium">{{ t('cart.total') }}</span>
-          <span class="font-display text-2xl font-bold text-forest-900">৳{{ cartStore.total.toLocaleString() }}</span>
+          <span class="text-2xl font-bold text-forest-900">৳{{ cartStore.total.toLocaleString() }}</span>
         </div>
         <RouterLink
           to="/checkout"

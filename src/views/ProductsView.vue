@@ -28,7 +28,7 @@
               <!-- Search & Sort -->
               <div class="flex gap-3 items-center flex-shrink-0">
                 <div class="relative">
-                  <input v-model="searchQuery" type="text" placeholder="পণ্য খুঁজুন..."
+                  <input v-model="searchQuery" type="text" placeholder="Search by name.."
                     class="pl-9 pr-4 py-2 w-52 text-sm rounded-xl border border-gray-200 bg-white/80 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-200 bangla" />
                   <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none"
                     viewBox="0 0 24 24" stroke="currentColor">
@@ -38,10 +38,10 @@
                 </div>
                 <select v-model="sortBy"
                   class="pl-3 pr-8 py-2 w-48 text-sm rounded-xl border border-gray-200 bg-white/80 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-200 bangla appearance-none cursor-pointer">
-                  <option value="default">ডিফল্ট</option>
-                  <option value="price-low">দাম: কম থেকে বেশি</option>
-                  <option value="price-high">দাম: বেশি থেকে কম</option>
-                  <option value="rating">রেটিং</option>
+                  <option value="default">Defalut</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="rating">Rating</option>
                 </select>
               </div>
 

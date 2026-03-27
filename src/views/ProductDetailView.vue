@@ -103,7 +103,7 @@
             <div class="rounded-2xl p-4"
               style="background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(240,253,244,0.8)); border: 1px solid rgba(255,255,255,0.9); box-shadow: 0 2px 12px rgba(34,197,94,0.06);">
               <div class="flex items-baseline gap-3 mb-1">
-                <span class="font-display text-4xl font-extrabold text-gray-800">৳{{ product.price }}</span>
+                <span class="text-4xl font-extrabold text-gray-800">৳{{ product.price }}</span>
                 <span v-if="product.originalPrice > product.price" class="text-lg text-gray-400 line-through">
                   ৳{{ product.originalPrice }}
                 </span>
@@ -113,6 +113,7 @@
 
             <!-- Description -->
             <p class="text-gray-500 bangla leading-relaxed text-sm">{{ product.description }}</p>
+            <p class="text-gray-500 leading-relaxed text-sm">{{ product.descriptionEn }}</p>
 
             <!-- Quantity & Cart -->
             <div class="flex items-center gap-3 pt-1">
