@@ -21,20 +21,12 @@
         <div class="grid lg:grid-cols-2 gap-12 items-center">
           <!-- Text Content -->
           <div>
-            <!-- Trust Badge -->
-            <div
-              class="inline-flex items-center gap-2 bg-forest-700/60 backdrop-blur-sm border border-forest-600/50 text-forest-200 text-sm font-semibold px-4 py-2 rounded-full mb-6 bangla">
-              <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              ১০০% প্রাকৃতিক ও নিরাপদ খাদ্য
-            </div>
-
             <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-6">
-              <span class="bangla">সুস্থ্য জীবনের</span>
+              <span class="bangla">সুস্থ্য জীবনের জন্য</span>
               <br />
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300 bangla">জন্য
-                নিরাপদ</span>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300 bangla">
+                নিরাপদ খাদ্য</span>
               <br />
-              <span class="bangla">খাদ্য</span>
             </h1>
 
             <p class="text-forest-200 text-lg md:text-xl bangla leading-relaxed mb-8 max-w-xl">
