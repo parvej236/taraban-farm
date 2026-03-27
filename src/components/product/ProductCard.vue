@@ -39,14 +39,17 @@
     </div>
 
     <!-- Content -->
-    <div class="p-4 flex flex-col flex-1">
+    <div class="p-3 sm:p-4 flex flex-col flex-1 min-w-0">
       <!-- Category tag -->
-      <span class="text-xs text-forest-600 font-semibold uppercase tracking-wide mb-1">{{ categoryLabel }}</span>
+      <span class="text-[10px] sm:text-xs text-forest-600 font-semibold uppercase tracking-wide mb-1 line-clamp-1">{{ categoryLabel }}</span>
       <!-- Name -->
-      <RouterLink :to="`/products/${product.id}`">
-        <h3 class="font-display font-bold text-forest-900 text-base leading-snug hover:text-forest-700 transition-colors bangla line-clamp-2">
-          {{ product.name }} ( {{ product.nameEn }})
+      <RouterLink :to="`/products/${product.id}`" class="block min-w-0 group/title">
+        <h3 class="font-display font-bold text-forest-900 text-sm sm:text-base leading-snug group-hover/title:text-forest-700 transition-colors bangla line-clamp-2">
+          {{ product.name }}
         </h3>
+        <p class="text-[11px] sm:text-xs text-gray-500 mt-0.5 leading-snug line-clamp-2">
+          {{ product.nameEn }}
+        </p>
       </RouterLink>
       <!-- Weight -->
       <p class="text-xs text-gray-400 mt-1">{{ product.weight }}</p>
@@ -62,16 +65,16 @@
       </div>
 
       <!-- Price -->
-      <div class="flex items-baseline gap-2 mt-3">
-        <span class="text-xl font-bold text-forest-900">৳{{ product.price }}</span>
-        <span v-if="product.originalPrice > product.price" class="text-sm text-gray-400 line-through">৳{{ product.originalPrice }}</span>
+      <div class="flex flex-wrap items-baseline gap-1.5 sm:gap-2 mt-2 sm:mt-3">
+        <span class="text-lg sm:text-xl font-bold text-forest-900 tabular-nums">৳{{ product.price }}</span>
+        <span v-if="product.originalPrice > product.price" class="text-xs sm:text-sm text-gray-400 line-through tabular-nums">৳{{ product.originalPrice }}</span>
       </div>
 
       <!-- Add to Cart -->
       <button
         @click="handleAddToCart"
         :disabled="!product.inStock"
-        class="mt-4 w-full btn-primary justify-center text-sm py-2.5 disabled:opacity-50 disabled:cursor-not-allowed"
+        class="mt-3 sm:mt-4 w-full btn-primary justify-center text-xs sm:text-sm py-2 sm:py-2.5 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <svg v-if="!added" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />

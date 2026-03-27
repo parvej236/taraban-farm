@@ -115,7 +115,7 @@
         </div>
 
         <!-- Products Grid -->
-        <TransitionGroup name="product-list" tag="div" class="product-grid">
+        <TransitionGroup name="product-list" tag="div" class="products-page-grid">
           <ProductCard v-for="product in filteredProducts" :key="product.id" :product="product" />
         </TransitionGroup>
 
