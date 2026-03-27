@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Lato:wght@300;400;700;900&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: Lato, "Hind Siliguri", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", ui-serif, Georgia, serif;
+  --font-bangla: "Hind Siliguri", ui-sans-serif, system-ui, sans-serif;
+
+  --color-forest-50: #f0fdf4;
+  --color-forest-100: #dcfce7;
+  --color-forest-200: #bbf7d0;
+  --color-forest-400: #4ade80;
+  --color-forest-600: #16a34a;
+  --color-forest-700: #15803d;
+  --color-forest-800: #166534;
+  --color-forest-900: #052e16;
+
+  --color-earth-100: #fef3c7;
+  --color-earth-500: #d98a28;
+  --color-earth-600: #b45309;
+  --color-earth-800: #6c3918;
+
+  --color-cream: #fdfcf0;
+}
+
+:root {
+  --color-primary: #166534;
+  --color-primary-light: #22c55e;
+  --color-accent: #d98a28;
+  --color-cream: #fdfcf0;
+  --color-earth: #6c3918;
+  --color-text: #1a2e1a;
+  --color-text-light: #4a6a4a;
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lato', 'Hind Siliguri', sans-serif;
+  color: var(--color-text);
+  background-color: #fafaf7;
+  overflow-x: hidden;
+}
+
+/* Bangla text */
+.bangla {
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f0fdf4;
+}
+::-webkit-scrollbar-thumb {
+  background: #16a34a;
+  border-radius: 10px;
+}
+
+/* Selection */
+::selection {
+  background-color: #bbf7d0;
+  color: #052e16;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-forest-700 text-white font-semibold px-6 py-3 rounded-full hover:bg-forest-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 border-2 border-forest-700 text-forest-700 font-semibold px-6 py-3 rounded-full hover:bg-forest-700 hover:text-white transition-all duration-300;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center gap-2 bg-earth-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-earth-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5;
+  }
+
+  .section-title {
+    @apply font-display text-3xl md:text-4xl lg:text-5xl font-bold text-forest-900;
+  }
+
+  .section-subtitle {
+    @apply text-forest-600 text-lg font-bangla leading-relaxed;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-organic {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-forest-100 text-forest-800;
+  }
+
+  .badge-new {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-earth-100 text-earth-800;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-forest-200 bg-white focus:outline-none focus:ring-2 focus:ring-forest-400 focus:border-transparent transition-all duration-200 font-bangla;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-white/50 shadow-xl rounded-2xl;
+  }
+
+  .leaf-decoration::before {
+    content: '🌿';
+    margin-right: 0.5rem;
+  }
+
+  .page-hero {
+    @apply relative bg-gradient-to-br from-forest-900 via-forest-800 to-forest-700 text-white overflow-hidden;
+  }
+}
+
+/* Noise texture overlay */
+.noise-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Organic blob shapes */
+.blob {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+/* Intersect animation */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Loading skeleton */
+.skeleton {
+  @apply animate-pulse bg-forest-100 rounded-lg;
+}
+
+/* Product grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Star rating */
+.star-filled { color: #f59e0b; }
+.star-empty { color: #d1d5db; }
+
+/* Toast overrides */
+.toastify {
+  font-family: 'Hind Siliguri', sans-serif !important;
+}
