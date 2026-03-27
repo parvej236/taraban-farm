@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#fafaf7] min-h-screen pt-24 pb-16">
+  <div class="bg-forest-900 min-h-screen pt-24 pb-16">
     <div class="container mx-auto px-4 lg:px-8 max-w-5xl">
       <h1 class="font-display text-3xl font-bold text-forest-900 bangla mb-8">চেকআউট</h1>
 

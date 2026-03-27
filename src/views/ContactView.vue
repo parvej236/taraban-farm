@@ -101,7 +101,7 @@
             <div class="text-6xl">🗺️</div>
             <div class="text-center">
               <p class="font-display text-xl font-bold text-forest-900 bangla">আমাদের অবস্থান</p>
-              <p class="text-forest-600 bangla text-sm mt-1">রোড ৫, বাড়ি ১২, চট্টগ্রাম, বাংলাদেশ</p>
+              <p class="text-forest-600 bangla text-sm mt-1">রোড ৫, বাড়ি ১২, দিনাজপুর, বাংলাদেশ</p>
               <a href="https://goo.gl/maps/example" target="_blank" class="btn-primary text-sm mt-4 inline-flex">Google Maps-এ দেখুন</a>
             </div>
           </div>
@@ -122,8 +122,8 @@ const submitting = ref(false)
 const form = reactive({ name: '', email: '', phone: '', subject: '', message: '' })
 
 const contactInfoList = [
-  { icon: '📍', title: 'ঠিকানা', value: 'রোড ৫, বাড়ি ১২, চট্টগ্রাম - ৪০০০, বাংলাদেশ' },
-  { icon: '📞', title: 'ফোন', value: '+880 1700-000000 (সকাল ৯টা - রাত ৯টা)' },
+  { icon: '📍', title: 'ঠিকানা', value: 'রোড ৫, বাড়ি ১২, দিনাজপুর, বাংলাদেশ' },
+  { icon: '📞', title: 'ফোন', value: '+880 1670-394056 (সকাল ৯টা - রাত ৯টা)' },
   { icon: '📧', title: 'ইমেইল', value: 'info@tarabanfarm.com' },
   { icon: '⏰', title: 'কার্যসময়', value: 'শনিবার - বৃহস্পতিবার, সকাল ৯টা - রাত ৯টা' },
 ]
