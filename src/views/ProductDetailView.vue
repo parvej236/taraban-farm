@@ -1,33 +1,33 @@
 <template>
-  <div v-if="product" class="min-h-screen"
+  <div v-if="product" class="min-h-screen overflow-x-hidden"
     style="background: linear-gradient(135deg, #f0fdf4 0%, #fefce8 50%, #f0fdfa 100%);">
 
     <!-- Breadcrumb -->
     <div class="pt-20 bg-forest-800 text-white">
-      <div class="container mx-auto px-4 lg:px-8 py-4">
-        <nav class="flex items-center gap-2 text-sm bangla">
-          <RouterLink to="/" class="hover:text-green-600 transition-colors">হোম</RouterLink>
-          <span class="text-gray-300">/</span>
-          <RouterLink to="/products" class="hover:text-green-600 transition-colors">পণ্যসমূহ</RouterLink>
-          <span>/</span>
-          <span class="font-medium">{{ product.name }}</span>
+      <div class="container mx-auto px-4 lg:px-8 py-3 sm:py-4 max-w-full">
+        <nav class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm bangla min-w-0">
+          <RouterLink to="/" class="hover:text-green-600 transition-colors shrink-0">হোম</RouterLink>
+          <span class="text-gray-300 shrink-0">/</span>
+          <RouterLink to="/products" class="hover:text-green-600 transition-colors shrink-0">পণ্যসমূহ</RouterLink>
+          <span class="text-gray-300 shrink-0">/</span>
+          <span class="font-medium min-w-0 break-words text-gray-100">{{ product.name }}</span>
         </nav>
       </div>
     </div>
 
     <!-- Product Section -->
-    <section class="py-10">
-      <div class="container mx-auto px-4 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-12 items-start">
+    <section class="py-6 sm:py-10">
+      <div class="container mx-auto px-4 lg:px-8 max-w-full min-w-0">
+        <div class="grid lg:grid-cols-2 gap-6 lg:gap-12 items-start min-w-0">
 
           <!-- ── Image Gallery ── -->
-          <div class="space-y-3">
+          <div class="space-y-3 min-w-0 w-full max-w-full">
             <!-- Main image with lightbox trigger -->
-            <div class="relative rounded-3xl overflow-hidden aspect-square cursor-zoom-in group shadow-xl"
+            <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden aspect-square cursor-zoom-in group shadow-xl max-w-full"
               style="background: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.9);"
               @click="lightboxOpen = true">
               <img :src="displayImage" :alt="product.name"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 max-w-full" />
               <!-- Zoom hint -->
               <div
                 class="absolute bottom-4 right-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -47,9 +47,9 @@
             </div>
 
             <!-- Thumbnails -->
-            <div class="flex gap-3 overflow-x-auto pb-1">
+            <div class="flex gap-2 sm:gap-3 overflow-x-auto pb-1 -mx-1 px-1 scroll-ps-2 snap-x snap-mandatory touch-pan-x">
               <button v-for="(img, i) in allImages" :key="i" @click="selectedImg = img"
-                class="flex-shrink-0 w-20 h-20 rounded-2xl overflow-hidden border-2 transition-all duration-200 hover:scale-105"
+                class="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl overflow-hidden border-2 transition-all duration-200 hover:scale-105 snap-start"
                 :style="displayImage === img
                   ? 'border-color: #16a34a; box-shadow: 0 0 0 3px rgba(22,163,74,0.15);'
                   : 'border-color: transparent; opacity: 0.65;'">
@@ -59,10 +59,10 @@
           </div>
 
           <!-- ── Product Details ── -->
-          <div class="space-y-5">
+          <div class="space-y-5 min-w-0 max-w-full">
 
             <!-- Badges & Title -->
-            <div>
+            <div class="min-w-0">
               <div class="flex flex-wrap items-center gap-2 mb-3">
                 <span class="px-3 py-1 rounded-full text-xs font-semibold bangla text-green-700"
                   style="background: linear-gradient(135deg, #dcfce7, #bbf7d0);">
@@ -79,14 +79,14 @@
                   স্টকে আছে
                 </span>
               </div>
-              <h1 class="font-display text-3xl md:text-4xl font-bold text-gray-800 bangla leading-tight">
+              <h1 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 bangla leading-tight break-words">
                 {{ product.name }}
               </h1>
-              <p class="text-gray-400 mt-1 text-sm">{{ product.nameEn }}</p>
+              <p class="text-gray-400 mt-1 text-sm break-words">{{ product.nameEn }}</p>
             </div>
 
             <!-- Rating -->
-            <div class="flex items-center gap-3">
+            <div class="flex flex-wrap items-center gap-2 sm:gap-3">
               <div class="flex gap-0.5">
                 <svg v-for="i in 5" :key="i" class="w-4 h-4"
                   :style="i <= Math.round(product.rating) ? 'color:#f59e0b' : 'color:#e5e7eb'" fill="currentColor"
@@ -100,37 +100,37 @@
             </div>
 
             <!-- Price -->
-            <div class="rounded-2xl p-4"
+            <div class="rounded-2xl p-3 sm:p-4 min-w-0"
               style="background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(240,253,244,0.8)); border: 1px solid rgba(255,255,255,0.9); box-shadow: 0 2px 12px rgba(34,197,94,0.06);">
-              <div class="flex items-baseline gap-3 mb-1">
-                <span class="text-4xl font-extrabold text-gray-800">৳{{ product.price }}</span>
-                <span v-if="product.originalPrice > product.price" class="text-lg text-gray-400 line-through">
+              <div class="flex flex-wrap items-baseline gap-2 sm:gap-3 mb-1">
+                <span class="text-3xl sm:text-4xl font-extrabold text-gray-800 tabular-nums">৳{{ product.price }}</span>
+                <span v-if="product.originalPrice > product.price" class="text-base sm:text-lg text-gray-400 line-through tabular-nums">
                   ৳{{ product.originalPrice }}
                 </span>
               </div>
-              <p class="text-xs text-gray-400 bangla">পরিমাণ: {{ product.weight }} · কৃষক: {{ product.farmer }}</p>
+              <p class="text-xs text-gray-400 bangla break-words leading-relaxed">পরিমাণ: {{ product.weight }} · কৃষক: {{ product.farmer }}</p>
             </div>
 
             <!-- Description -->
-            <p class="text-gray-500 bangla leading-relaxed text-sm">{{ product.description }}</p>
-            <p class="text-gray-500 leading-relaxed text-sm">{{ product.descriptionEn }}</p>
+            <p class="text-gray-500 bangla leading-relaxed text-sm break-words">{{ product.description }}</p>
+            <p class="text-gray-500 leading-relaxed text-sm break-words">{{ product.descriptionEn }}</p>
 
             <!-- Quantity & Cart -->
-            <div class="flex items-center gap-3 pt-1">
-              <div class="flex items-center rounded-2xl overflow-hidden border border-gray-200"
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1 min-w-0">
+              <div class="flex items-center rounded-2xl overflow-hidden border border-gray-200 shrink-0 mx-auto sm:mx-0"
                 style="background: rgba(255,255,255,0.9);">
-                <button @click="quantity > 1 && quantity--"
-                  class="w-11 h-11 flex items-center justify-center text-gray-500 hover:bg-green-50 hover:text-green-600 transition-colors text-lg font-bold">
+                <button type="button" @click="quantity > 1 && quantity--"
+                  class="w-12 h-12 sm:w-11 sm:h-11 flex items-center justify-center text-gray-500 hover:bg-green-50 hover:text-green-600 transition-colors text-lg font-bold">
                   −
                 </button>
-                <span class="w-10 text-center font-bold text-gray-700">{{ quantity }}</span>
-                <button @click="quantity++"
-                  class="w-11 h-11 flex items-center justify-center text-gray-500 hover:bg-green-50 hover:text-green-600 transition-colors text-lg font-bold">
+                <span class="min-w-[2.75rem] text-center font-bold text-gray-700">{{ quantity }}</span>
+                <button type="button" @click="quantity++"
+                  class="w-12 h-12 sm:w-11 sm:h-11 flex items-center justify-center text-gray-500 hover:bg-green-50 hover:text-green-600 transition-colors text-lg font-bold">
                   +
                 </button>
               </div>
-              <button @click="handleAddToCart"
-                class="flex-1 flex items-center justify-center gap-2 py-3 rounded-2xl text-white font-semibold bangla text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              <button type="button" @click="handleAddToCart"
+                class="w-full sm:flex-1 min-w-0 flex items-center justify-center gap-2 py-3.5 sm:py-3 px-4 rounded-2xl text-white font-semibold bangla text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
                 style="background: linear-gradient(135deg, #16a34a, #059669); box-shadow: 0 4px 16px rgba(22,163,74,0.25);">
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -162,10 +162,10 @@
         </div>
 
         <!-- ── Tabs ── -->
-        <div class="mt-16">
-          <div class="flex gap-1 overflow-x-auto pb-px" style="border-bottom: 1px solid rgba(34,197,94,0.15);">
+        <div class="mt-10 sm:mt-16 min-w-0">
+          <div class="flex gap-1 overflow-x-auto pb-px -mx-1 px-1 scroll-pb-1 touch-pan-x" style="border-bottom: 1px solid rgba(34,197,94,0.15);">
             <button v-for="tab in tabs" :key="tab.key" @click="activeTab = tab.key"
-              class="px-5 py-3 text-sm font-semibold bangla whitespace-nowrap transition-all duration-200 rounded-t-xl border-b-2 -mb-px"
+              class="px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold bangla whitespace-nowrap transition-all duration-200 rounded-t-lg sm:rounded-t-xl border-b-2 -mb-px shrink-0"
               :style="activeTab === tab.key
                 ? 'border-color: #16a34a; color: #15803d; background: rgba(220,252,231,0.5);'
                 : 'border-color: transparent; color: #9ca3af;'">
@@ -173,7 +173,7 @@
             </button>
           </div>
 
-          <div class="rounded-b-2xl rounded-tr-2xl p-6 mt-0"
+          <div class="rounded-b-2xl rounded-tr-2xl p-4 sm:p-6 mt-0 min-w-0 overflow-x-hidden"
             style="background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.9); border-top: none; box-shadow: 0 8px 32px rgba(34,197,94,0.06);">
 
             <!-- Nutrition -->
@@ -221,7 +221,7 @@
               </p>
 
               <!-- Timeline Steps -->
-              <div class="relative border-l-2 border-green-200 pl-6 space-y-6">
+              <div class="relative border-l-2 border-green-200 pl-4 sm:pl-6 space-y-6 min-w-0">
 
                 <div v-for="(step, index) in product.process.steps" :key="index" class="relative">
                   <!-- Dot -->
@@ -308,12 +308,12 @@
         </div>
 
         <!-- Related Products -->
-        <div class="mt-16">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="w-1 h-6 rounded-full" style="background: linear-gradient(180deg, #16a34a, #059669);"></div>
-            <h2 class="font-display text-2xl font-bold text-gray-800 bangla">সম্পর্কিত পণ্যসমূহ</h2>
+        <div class="mt-10 sm:mt-16 min-w-0">
+          <div class="flex items-center gap-3 mb-4 sm:mb-6">
+            <div class="w-1 h-6 rounded-full shrink-0" style="background: linear-gradient(180deg, #16a34a, #059669);"></div>
+            <h2 class="font-display text-xl sm:text-2xl font-bold text-gray-800 bangla break-words">সম্পর্কিত পণ্যসমূহ</h2>
           </div>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-5 min-w-0">
             <ProductCard v-for="p in relatedProducts" :key="p.id" :product="p" />
           </div>
         </div>
@@ -323,24 +323,24 @@
     <!-- ── Lightbox ── -->
     <Teleport to="body">
       <Transition name="lightbox">
-        <div v-if="lightboxOpen" class="fixed inset-0 z-[100] flex items-center justify-center p-4"
+        <div v-if="lightboxOpen" class="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-4 overflow-y-auto overscroll-contain"
           style="background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);" @click.self="lightboxOpen = false">
 
-          <div class="relative max-w-3xl w-full">
-            <!-- Close -->
-            <button @click="lightboxOpen = false"
-              class="absolute -top-12 right-0 w-9 h-9 rounded-full flex items-center justify-center text-white/70 hover:text-white transition-colors"
-              style="background: rgba(255,255,255,0.1);">
+          <div class="relative max-w-3xl w-full min-w-0 my-auto py-8 sm:py-0">
+            <!-- Close — in-viewport on mobile (no negative top offset) -->
+            <button type="button" @click="lightboxOpen = false"
+              class="absolute top-0 right-0 z-10 sm:-top-12 w-10 h-10 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-white/90 hover:text-white transition-colors shadow-lg"
+              style="background: rgba(255,255,255,0.15);">
               <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
 
             <!-- Main large image -->
-            <img :src="displayImage" :alt="product.name" class="w-full rounded-2xl object-contain max-h-[70vh]" />
+            <img :src="displayImage" :alt="product.name" class="w-full rounded-xl sm:rounded-2xl object-contain max-h-[min(78vh,560px)] sm:max-h-[70vh]" />
 
             <!-- Thumbnails in lightbox -->
-            <div class="flex justify-center gap-3 mt-4 overflow-x-auto pb-1">
+            <div class="flex justify-start sm:justify-center gap-2 sm:gap-3 mt-3 sm:mt-4 overflow-x-auto pb-1 -mx-1 px-1 touch-pan-x">
               <button v-for="(img, i) in allImages" :key="i" @click="selectedImg = img"
                 class="flex-shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 transition-all duration-200" :style="displayImage === img
                   ? 'border-color: #4ade80; opacity: 1;'
@@ -350,16 +350,16 @@
             </div>
 
             <!-- Prev / Next arrows -->
-            <button v-if="currentImageIndex > 0" @click="selectedImg = allImages[currentImageIndex - 1]"
-              class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center text-white transition-all"
+            <button v-if="currentImageIndex > 0" type="button" @click="selectedImg = allImages[currentImageIndex - 1]"
+              class="absolute left-1 sm:left-3 top-[42%] sm:top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-white transition-all touch-manipulation"
               style="background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);">
               <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
               </svg>
             </button>
-            <button v-if="currentImageIndex < allImages.length - 1"
+            <button v-if="currentImageIndex < allImages.length - 1" type="button"
               @click="selectedImg = allImages[currentImageIndex + 1]"
-              class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center text-white transition-all"
+              class="absolute right-1 sm:right-3 top-[42%] sm:top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-white transition-all touch-manipulation"
               style="background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);">
               <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
