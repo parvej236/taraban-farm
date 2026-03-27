@@ -1,28 +1,20 @@
 <template>
   <div>
-    <PageHero
-      title="আমাদের পণ্যসমূহ"
-      subtitle="সেরা মানের জৈব ও প্রাকৃতিক খাদ্য পণ্য বেছে নিন"
-      tag="পণ্য তালিকা"
-      tagIcon="🛒"
-      :breadcrumbs="[{ label: 'পণ্যসমূহ' }]"
-    />
+    <PageHero title="আমাদের পণ্যসমূহ" subtitle="সেরা মানের জৈব ও প্রাকৃতিক খাদ্য পণ্য বেছে নিন" tag="পণ্য তালিকা"
+      tagIcon="🛒" :breadcrumbs="[{ label: 'পণ্যসমূহ' }]" />
 
-    <section class="py-12 bg-earth-100/60 min-h-screen">
+    <section class="py-3 bg-earth-100/60 min-h-screen">
       <div class="container mx-auto px-4 lg:px-8">
         <!-- Toolbar -->
-        <div class="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between mb-8">
+        <div class="sticky top-16 z-40 bg-earth-100/95 backdrop-blur supports-[backdrop-filter]:bg-earth-100/80
+         flex flex-col md:flex-row gap-4 items-start md:items-center justify-between 
+         mb-8 py-3 border-b border-gray-200">
           <!-- Category Filters -->
           <div class="flex flex-wrap gap-2">
-            <button
-              v-for="cat in categories"
-              :key="cat.slug"
-              @click="activeCategory = cat.slug"
-              class="px-4 py-2 rounded-full text-sm font-semibold bangla transition-all duration-200"
-              :class="activeCategory === cat.slug
+            <button v-for="cat in categories" :key="cat.slug" @click="activeCategory = cat.slug"
+              class="px-4 py-2 rounded-full text-sm font-semibold bangla transition-all duration-200" :class="activeCategory === cat.slug
                 ? 'bg-forest-700 text-white shadow-md'
-                : 'bg-white text-gray-600 hover:bg-forest-50 hover:text-forest-800 border border-gray-200'"
-            >
+                : 'bg-white text-gray-600 hover:bg-forest-50 hover:text-forest-800 border border-gray-200'">
               {{ cat.icon }} {{ cat.name }}
             </button>
           </div>
@@ -30,14 +22,12 @@
           <!-- Sort & Search -->
           <div class="flex gap-3 items-center">
             <div class="relative">
-              <input
-                v-model="searchQuery"
-                type="text"
-                placeholder="পণ্য খুঁজুন..."
-                class="input-field pl-10 w-52 text-sm py-2"
-              />
-              <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              <input v-model="searchQuery" type="text" placeholder="পণ্য খুঁজুন..."
+                class="input-field pl-10 w-52 text-sm py-2" />
+              <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </div>
             <select v-model="sortBy" class="input-field w-44 text-sm py-2 bangla">
@@ -56,11 +46,7 @@
 
         <!-- Products Grid -->
         <TransitionGroup name="product-list" tag="div" class="product-grid">
-          <ProductCard
-            v-for="product in filteredProducts"
-            :key="product.id"
-            :product="product"
-          />
+          <ProductCard v-for="product in filteredProducts" :key="product.id" :product="product" />
         </TransitionGroup>
 
         <!-- Empty State -->
@@ -126,7 +112,18 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.product-list-enter-active, .product-list-leave-active { transition: all 0.4s ease; }
-.product-list-enter-from { opacity: 0; transform: scale(0.9); }
-.product-list-leave-to { opacity: 0; transform: scale(0.9); }
+.product-list-enter-active,
+.product-list-leave-active {
+  transition: all 0.4s ease;
+}
+
+.product-list-enter-from {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.product-list-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+}
 </style>
