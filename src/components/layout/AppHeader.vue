@@ -41,11 +41,11 @@
         <!-- Right Side Actions -->
         <div class="flex items-center gap-2">
           <!-- Language Toggle -->
-          <button @click="toggleLocale"
+          <!-- <button @click="toggleLocale"
             class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold border transition-all duration-200"
             :class="scrolled ? 'border-forest-300 text-forest-700 hover:bg-forest-50' : 'border-white/40 text-white hover:bg-white/10'">
             {{ locale === 'bn' ? 'EN' : 'বাং' }}
-          </button>
+          </button> -->
 
           <!-- Cart Button -->
           <button @click="cartStore.openDrawer()"

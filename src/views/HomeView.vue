@@ -113,7 +113,7 @@
     </section>
 
     <!-- Benefits/Features Section -->
-    <section class="py-20 bg-[#fafaf7]">
+    <section class="py-20 bg-green-100/50">
       <div class="container mx-auto px-4 lg:px-8">
         <SectionHeader tag="কেন তারাবান ফার্ম?" tagIcon="🌱" title="আমাদের প্রতিশ্রুতি"
           subtitle="আমরা বিশ্বাস করি প্রতিটি পরিবার নিরাপদ ও পুষ্টিকর খাদ্য পাওয়ার অধিকার রাখে।" />
@@ -164,7 +164,7 @@
     </section>
 
     <!-- Featured Products -->
-    <section class="py-20 bg-[#fafaf7]">
+    <section class="py-20 bg-earth-100/60">
       <div class="container mx-auto px-4 lg:px-8">
         <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-12">
           <SectionHeader tag="বিশেষ পণ্য" tagIcon="⭐" title="জনপ্রিয় পণ্যসমূহ"
@@ -232,7 +232,7 @@
     </section>
 
     <!-- Blog Preview -->
-    <section class="py-20 bg-[#fafaf7]">
+    <section class="py-20 bg-earth-100/60">
       <div class="container mx-auto px-4 lg:px-8">
         <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-12">
           <SectionHeader tag="স্বাস্থ্য ব্লগ" tagIcon="📖" title="সর্বশেষ নিবন্ধসমূহ"
