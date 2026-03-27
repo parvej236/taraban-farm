@@ -73,22 +73,26 @@
             <div class="grid grid-cols-2 gap-4">
               <div class="space-y-4">
                 <div class="rounded-3xl overflow-hidden h-56 shadow-2xl">
-                  <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=500&q=80" alt="Honey"
-                    class="w-full h-full object-cover" />
+                  <img
+                    src="https://plus.unsplash.com/premium_photo-1678344170545-c3edef92a16e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGFncmljdWx0dXJlfGVufDB8fDB8fHww"
+                    alt="Honey" class="w-full h-full object-cover" />
                 </div>
                 <div class="rounded-3xl overflow-hidden h-40 shadow-2xl">
-                  <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=500&q=80" alt="Farm"
-                    class="w-full h-full object-cover" />
+                  <img
+                    src="https://images.unsplash.com/photo-1703355685722-2996b01483be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGZpcm18ZW58MHx8MHx8fDA%3D"
+                    alt="Farm" class="w-full h-full object-cover" />
                 </div>
               </div>
               <div class="space-y-4 mt-8">
                 <div class="rounded-3xl overflow-hidden h-40 shadow-2xl">
-                  <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&q=80" alt="Vegetables"
-                    class="w-full h-full object-cover" />
+                  <img
+                    src="https://plus.unsplash.com/premium_photo-1680322474521-60fcadf0a416?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNyb3BzfGVufDB8fDB8fHww"
+                    alt="Vegetables" class="w-full h-full object-cover" />
                 </div>
                 <div class="rounded-3xl overflow-hidden h-56 shadow-2xl">
-                  <img src="https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=500&q=80" alt="Spices"
-                    class="w-full h-full object-cover" />
+                  <img
+        src="https://plus.unsplash.com/premium_photo-1658506729016-b0beeebda208?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHRlYW0lMjB3b3JrfGVufDB8fDB8fHww"
+                    alt="Spices" class="w-full h-full object-cover" />
                 </div>
               </div>
             </div>
