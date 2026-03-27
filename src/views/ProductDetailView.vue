@@ -1,5 +1,6 @@
 <template>
-  <div v-if="product" class="min-h-screen" style="background: linear-gradient(135deg, #f0fdf4 0%, #fefce8 50%, #f0fdfa 100%);">
+  <div v-if="product" class="min-h-screen"
+    style="background: linear-gradient(135deg, #f0fdf4 0%, #fefce8 50%, #f0fdfa 100%);">
 
     <!-- Breadcrumb -->
     <div class="pt-20 bg-forest-800 text-white">
@@ -22,15 +23,14 @@
           <!-- ── Image Gallery ── -->
           <div class="space-y-3">
             <!-- Main image with lightbox trigger -->
-            <div
-              class="relative rounded-3xl overflow-hidden aspect-square cursor-zoom-in group shadow-xl"
+            <div class="relative rounded-3xl overflow-hidden aspect-square cursor-zoom-in group shadow-xl"
               style="background: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.9);"
-              @click="lightboxOpen = true"
-            >
+              @click="lightboxOpen = true">
               <img :src="displayImage" :alt="product.name"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
               <!-- Zoom hint -->
-              <div class="absolute bottom-4 right-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              <div
+                class="absolute bottom-4 right-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 style="background: rgba(0,0,0,0.45); backdrop-filter: blur(8px);">
                 <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -48,16 +48,12 @@
 
             <!-- Thumbnails -->
             <div class="flex gap-3 overflow-x-auto pb-1">
-              <button
-                v-for="(img, i) in allImages"
-                :key="i"
-                @click="selectedImg = img"
+              <button v-for="(img, i) in allImages" :key="i" @click="selectedImg = img"
                 class="flex-shrink-0 w-20 h-20 rounded-2xl overflow-hidden border-2 transition-all duration-200 hover:scale-105"
                 :style="displayImage === img
                   ? 'border-color: #16a34a; box-shadow: 0 0 0 3px rgba(22,163,74,0.15);'
-                  : 'border-color: transparent; opacity: 0.65;'"
-              >
-                <img :src="img" :alt="`${product.name} ${i+1}`" class="w-full h-full object-cover" />
+                  : 'border-color: transparent; opacity: 0.65;'">
+                <img :src="img" :alt="`${product.name} ${i + 1}`" class="w-full h-full object-cover" />
               </button>
             </div>
           </div>
@@ -72,8 +68,7 @@
                   style="background: linear-gradient(135deg, #dcfce7, #bbf7d0);">
                   {{ categoryLabel }}
                 </span>
-                <span v-if="product.badge"
-                  class="px-3 py-1 rounded-full text-xs font-semibold bangla text-amber-700"
+                <span v-if="product.badge" class="px-3 py-1 rounded-full text-xs font-semibold bangla text-amber-700"
                   style="background: linear-gradient(135deg, #fef9c3, #fde68a);">
                   {{ product.badge }}
                 </span>
@@ -94,9 +89,10 @@
             <div class="flex items-center gap-3">
               <div class="flex gap-0.5">
                 <svg v-for="i in 5" :key="i" class="w-4 h-4"
-                  :style="i <= Math.round(product.rating) ? 'color:#f59e0b' : 'color:#e5e7eb'"
-                  fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  :style="i <= Math.round(product.rating) ? 'color:#f59e0b' : 'color:#e5e7eb'" fill="currentColor"
+                  viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
               </div>
               <span class="font-bold text-gray-700 text-sm">{{ product.rating }}</span>
@@ -104,7 +100,8 @@
             </div>
 
             <!-- Price -->
-            <div class="rounded-2xl p-4" style="background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(240,253,244,0.8)); border: 1px solid rgba(255,255,255,0.9); box-shadow: 0 2px 12px rgba(34,197,94,0.06);">
+            <div class="rounded-2xl p-4"
+              style="background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(240,253,244,0.8)); border: 1px solid rgba(255,255,255,0.9); box-shadow: 0 2px 12px rgba(34,197,94,0.06);">
               <div class="flex items-baseline gap-3 mb-1">
                 <span class="font-display text-4xl font-extrabold text-gray-800">৳{{ product.price }}</span>
                 <span v-if="product.originalPrice > product.price" class="text-lg text-gray-400 line-through">
@@ -153,7 +150,9 @@
                 class="flex items-center gap-1 text-xs text-green-700 rounded-full px-3 py-1.5 bangla font-medium"
                 style="background: linear-gradient(135deg, rgba(220,252,231,0.8), rgba(187,247,208,0.6)); border: 1px solid rgba(134,239,172,0.4);">
                 <svg class="w-3 h-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
                 </svg>
                 {{ badge }}
               </span>
@@ -163,16 +162,12 @@
 
         <!-- ── Tabs ── -->
         <div class="mt-16">
-          <div class="flex gap-1 overflow-x-auto pb-px"
-            style="border-bottom: 1px solid rgba(34,197,94,0.15);">
-            <button
-              v-for="tab in tabs" :key="tab.key"
-              @click="activeTab = tab.key"
+          <div class="flex gap-1 overflow-x-auto pb-px" style="border-bottom: 1px solid rgba(34,197,94,0.15);">
+            <button v-for="tab in tabs" :key="tab.key" @click="activeTab = tab.key"
               class="px-5 py-3 text-sm font-semibold bangla whitespace-nowrap transition-all duration-200 rounded-t-xl border-b-2 -mb-px"
               :style="activeTab === tab.key
                 ? 'border-color: #16a34a; color: #15803d; background: rgba(220,252,231,0.5);'
-                : 'border-color: transparent; color: #9ca3af;'"
-            >
+                : 'border-color: transparent; color: #9ca3af;'">
               {{ tab.label }}
             </button>
           </div>
@@ -184,8 +179,7 @@
             <div v-if="activeTab === 'nutrition'">
               <h3 class="font-display text-lg font-bold text-gray-700 bangla mb-4">পুষ্টিমান (প্রতি ১০০ গ্রামে)</h3>
               <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-                <div v-for="item in product.nutritionalValue" :key="item.name"
-                  class="rounded-xl p-4 border"
+                <div v-for="item in product.nutritionalValue" :key="item.name" class="rounded-xl p-4 border"
                   style="background: linear-gradient(135deg, rgba(240,253,244,0.8), rgba(255,255,255,0.6)); border-color: rgba(134,239,172,0.3);">
                   <p class="text-gray-400 text-xs bangla mb-1">{{ item.name }}</p>
                   <p class="font-bold text-gray-700 bangla text-sm">{{ item.value }}</p>
@@ -197,12 +191,13 @@
             <div v-if="activeTab === 'benefits'">
               <h3 class="font-display text-lg font-bold text-gray-700 bangla mb-4">স্বাস্থ্য উপকারিতা</h3>
               <ul class="space-y-3">
-                <li v-for="benefit in product.healthBenefits" :key="benefit"
-                  class="flex items-start gap-3">
+                <li v-for="benefit in product.healthBenefits" :key="benefit" class="flex items-start gap-3">
                   <div class="w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5"
                     style="background: linear-gradient(135deg, #dcfce7, #bbf7d0);">
                     <svg class="w-3 h-3 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
                     </svg>
                   </div>
                   <span class="text-gray-600 bangla text-sm leading-relaxed">{{ benefit }}</span>
@@ -211,17 +206,82 @@
             </div>
 
             <!-- Process -->
-            <div v-if="activeTab === 'process'">
-              <h3 class="font-display text-lg font-bold text-gray-700 bangla mb-4">উৎপাদন প্রক্রিয়া</h3>
-              <p class="text-gray-500 bangla leading-relaxed text-sm">{{ product.process }}</p>
+            <div v-if="activeTab === 'process'" class="space-y-6">
+
+              <!-- Title -->
+              <h3 class="font-display text-xl font-bold text-gray-800 bangla">
+                উৎপাদন প্রক্রিয়া
+              </h3>
+
+              <!-- Summary -->
+              <p
+                class="text-gray-600 bangla text-sm leading-relaxed bg-green-50 p-4 rounded-xl border border-green-100">
+                {{ product.process.summary }}
+              </p>
+
+              <!-- Timeline Steps -->
+              <div class="relative border-l-2 border-green-200 pl-6 space-y-6">
+
+                <div v-for="(step, index) in product.process.steps" :key="index" class="relative">
+                  <!-- Dot -->
+                  <div class="absolute -left-[9px] top-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></div>
+
+                  <!-- Content -->
+                  <div class="bg-white shadow-sm rounded-xl p-4 border border-gray-100">
+                    <h4 class="font-semibold text-gray-800 bangla text-sm">
+                      {{ index + 1 }}. {{ step.title }}
+                    </h4>
+                    <p class="text-gray-500 text-sm mt-1 bangla leading-relaxed">
+                      {{ step.description }}
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Certifications -->
+              <div v-if="product.process.certifications?.length">
+                <h4 class="text-sm font-semibold text-gray-700 mb-2 bangla">
+                  বৈশিষ্ট্য
+                </h4>
+
+                <div class="flex flex-wrap gap-2">
+                  <span v-for="(item, i) in product.process.certifications" :key="i"
+                    class="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full">
+                    {{ item }}
+                  </span>
+                </div>
+              </div>
+
+              <!-- Storage + Origin -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <!-- Storage -->
+                <div class="bg-gray-50 p-4 rounded-xl border">
+                  <p class="text-xs text-gray-400 mb-1">সংরক্ষণ</p>
+                  <p class="text-sm text-gray-700 bangla">
+                    {{ product.process.storage }}
+                  </p>
+                </div>
+
+                <!-- Origin -->
+                <div class="bg-gray-50 p-4 rounded-xl border">
+                  <p class="text-xs text-gray-400 mb-1">উৎপত্তি</p>
+                  <p class="text-sm text-gray-700 bangla">
+                    {{ product.process.origin.farm }} <br />
+                    {{ product.process.origin.location }}
+                  </p>
+                </div>
+
+              </div>
+
             </div>
 
             <!-- Reviews -->
             <div v-if="activeTab === 'reviews'">
               <h3 class="font-display text-lg font-bold text-gray-700 bangla mb-6">গ্রাহক পর্যালোচনা</h3>
               <div class="space-y-4">
-                <div v-for="review in sampleReviews" :key="review.name"
-                  class="rounded-2xl p-4"
+                <div v-for="review in sampleReviews" :key="review.name" class="rounded-2xl p-4"
                   style="background: linear-gradient(135deg, rgba(240,253,244,0.6), rgba(255,255,255,0.5)); border: 1px solid rgba(134,239,172,0.2);">
                   <div class="flex items-center gap-3 mb-2">
                     <div class="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm text-white"
@@ -231,8 +291,10 @@
                     <div>
                       <p class="font-semibold text-gray-700 bangla text-sm">{{ review.name }}</p>
                       <div class="flex gap-0.5 mt-0.5">
-                        <svg v-for="i in review.rating" :key="i" class="w-3 h-3 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        <svg v-for="i in review.rating" :key="i" class="w-3 h-3 text-amber-400" fill="currentColor"
+                          viewBox="0 0 20 20">
+                          <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                         </svg>
                       </div>
                     </div>
@@ -260,10 +322,8 @@
     <!-- ── Lightbox ── -->
     <Teleport to="body">
       <Transition name="lightbox">
-        <div v-if="lightboxOpen"
-          class="fixed inset-0 z-[100] flex items-center justify-center p-4"
-          style="background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);"
-          @click.self="lightboxOpen = false">
+        <div v-if="lightboxOpen" class="fixed inset-0 z-[100] flex items-center justify-center p-4"
+          style="background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);" @click.self="lightboxOpen = false">
 
           <div class="relative max-w-3xl w-full">
             <!-- Close -->
@@ -276,25 +336,20 @@
             </button>
 
             <!-- Main large image -->
-            <img :src="displayImage" :alt="product.name"
-              class="w-full rounded-2xl object-contain max-h-[70vh]" />
+            <img :src="displayImage" :alt="product.name" class="w-full rounded-2xl object-contain max-h-[70vh]" />
 
             <!-- Thumbnails in lightbox -->
             <div class="flex justify-center gap-3 mt-4 overflow-x-auto pb-1">
-              <button v-for="(img, i) in allImages" :key="i"
-                @click="selectedImg = img"
-                class="flex-shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 transition-all duration-200"
-                :style="displayImage === img
+              <button v-for="(img, i) in allImages" :key="i" @click="selectedImg = img"
+                class="flex-shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 transition-all duration-200" :style="displayImage === img
                   ? 'border-color: #4ade80; opacity: 1;'
-                  : 'border-color: rgba(255,255,255,0.2); opacity: 0.55;'"
-              >
+                  : 'border-color: rgba(255,255,255,0.2); opacity: 0.55;'">
                 <img :src="img" :alt="`thumb-${i}`" class="w-full h-full object-cover" />
               </button>
             </div>
 
             <!-- Prev / Next arrows -->
-            <button v-if="currentImageIndex > 0"
-              @click="selectedImg = allImages[currentImageIndex - 1]"
+            <button v-if="currentImageIndex > 0" @click="selectedImg = allImages[currentImageIndex - 1]"
               class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center text-white transition-all"
               style="background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);">
               <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -377,17 +432,17 @@ const categoryLabel = computed(() => categoryLabels[product.value?.category] || 
 
 const tabs = [
   { key: 'nutrition', label: '🧪 পুষ্টিমান' },
-  { key: 'benefits',  label: '💚 স্বাস্থ্য উপকারিতা' },
-  { key: 'process',   label: '🌾 উৎপাদন প্রক্রিয়া' },
-  { key: 'reviews',   label: '⭐ রিভিউ' },
+  { key: 'benefits', label: '💚 স্বাস্থ্য উপকারিতা' },
+  { key: 'process', label: '🌾 উৎপাদন প্রক্রিয়া' },
+  { key: 'reviews', label: '⭐ রিভিউ' },
 ]
 
 const trustBadges = ['১০০% খাঁটি', 'রাসায়নিক মুক্ত', 'ল্যাব পরীক্ষিত', 'দ্রুত ডেলিভারি']
 
 const sampleReviews = [
   { name: 'রেহানা বেগম', rating: 5, text: 'অসাধারণ গুণমান! পরিবারের সবাই খুব পছন্দ করেছে। আবার অর্ডার করব।' },
-  { name: 'আবু সাঈদ',    rating: 4, text: 'দাম একটু বেশি মনে হলেও মান নিঃসন্দেহে ভালো। সন্তুষ্ট।' },
-  { name: 'তাহমিনা',      rating: 5, text: 'প্রথমবার কিনলাম। এত ভালো মান আশা করিনি। ধন্যবাদ তারাবান ফার্ম।' },
+  { name: 'আবু সাঈদ', rating: 4, text: 'দাম একটু বেশি মনে হলেও মান নিঃসন্দেহে ভালো। সন্তুষ্ট।' },
+  { name: 'তাহমিনা', rating: 5, text: 'প্রথমবার কিনলাম। এত ভালো মান আশা করিনি। ধন্যবাদ তারাবান ফার্ম।' },
 ]
 
 const relatedProducts = computed(() =>
@@ -406,6 +461,7 @@ function handleAddToCart() {
 .lightbox-leave-active {
   transition: all 0.25s ease;
 }
+
 .lightbox-enter-from,
 .lightbox-leave-to {
   opacity: 0;
