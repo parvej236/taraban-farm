@@ -91,7 +91,7 @@
                 </div>
                 <div class="rounded-3xl overflow-hidden h-56 shadow-2xl">
                   <img
-        src="https://plus.unsplash.com/premium_photo-1658506729016-b0beeebda208?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHRlYW0lMjB3b3JrfGVufDB8fDB8fHww"
+                    src="https://plus.unsplash.com/premium_photo-1658506729016-b0beeebda208?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHRlYW0lMjB3b3JrfGVufDB8fDB8fHww"
                     alt="Spices" class="w-full h-full object-cover" />
                 </div>
               </div>
@@ -117,65 +117,179 @@
     </section>
 
     <!-- Benefits/Features Section -->
-    <section class="py-20 bg-green-100/50">
-      <div class="container mx-auto px-4 lg:px-8">
+    <section class="py-24 relative overflow-hidden"
+      style="background: linear-gradient(135deg, #f0fdf4 0%, #fefce8 50%, #f0fdfa 100%);">
+
+      <!-- Ambient glow blobs -->
+      <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full opacity-40 blur-3xl pointer-events-none"
+        style="background: radial-gradient(circle, #bbf7d0, transparent 70%);"></div>
+      <div class="absolute -bottom-24 -right-24 w-80 h-80 rounded-full opacity-30 blur-3xl pointer-events-none"
+        style="background: radial-gradient(circle, #a7f3d0, transparent 70%);"></div>
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] opacity-20 blur-3xl pointer-events-none"
+        style="background: radial-gradient(ellipse, #d1fae5, transparent 60%);"></div>
+
+      <div class="container mx-auto px-4 lg:px-8 relative">
         <SectionHeader tag="কেন তারাবান ফার্ম?" tagIcon="🌱" title="আমাদের প্রতিশ্রুতি"
           subtitle="আমরা বিশ্বাস করি প্রতিটি পরিবার নিরাপদ ও পুষ্টিকর খাদ্য পাওয়ার অধিকার রাখে।" />
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           <div v-for="(benefit, i) in benefits" :key="benefit.title"
-            class="animate-on-scroll bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-forest-50"
-            :style="`transition-delay: ${i * 100}ms`">
-            <div class="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center text-3xl mb-4"
-              :class="benefit.bgColor">
-              {{ benefit.icon }}
+            class="group animate-on-scroll relative rounded-2xl p-6 text-center border hover:-translate-y-1.5 transition-all duration-300 overflow-hidden cursor-default"
+            :style="`transition-delay: ${i * 100}ms;
+          background: linear-gradient(145deg, rgba(255,255,255,0.85), rgba(255,255,255,0.6));
+          backdrop-filter: blur(16px);
+          border-color: rgba(255,255,255,0.9);
+          box-shadow: 0 4px 24px rgba(34,197,94,0.07), 0 1px 2px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,1);`">
+
+            <!-- Top shimmer line on hover -->
+            <div
+              class="absolute top-0 left-6 right-6 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              :style="`background: linear-gradient(90deg, transparent, ${benefit.glowColor}, transparent);`"></div>
+
+            <!-- Corner glow on hover -->
+            <div
+              class="absolute -top-6 -right-6 w-20 h-20 rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-500 blur-xl pointer-events-none"
+              :style="`background: ${benefit.glowColor};`"></div>
+
+            <!-- Bottom border accent on hover -->
+            <div
+              class="absolute bottom-0 left-0 right-0 h-0.5 rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              :style="`background: linear-gradient(90deg, transparent, ${benefit.glowColor}80, transparent);`"></div>
+
+            <!-- Icon bubble -->
+            <div
+              class="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-5 relative transition-transform duration-300 group-hover:scale-110"
+              :style="`background: linear-gradient(135deg, ${benefit.bgFrom}, ${benefit.bgTo});
+            box-shadow: 0 4px 16px ${benefit.glowColor}30;
+            border: 1px solid ${benefit.glowColor}25;`">
+
+              <!-- Inline SVG per benefit -->
+              <svg v-if="i === 0" viewBox="0 0 32 32" fill="none" class="w-7 h-7">
+                <path d="M16 4C10 4 6 9 6 14c0 4 2 7 5 9v3h10v-3c3-2 5-5 5-9 0-5-4-10-10-10z"
+                  :fill="`${benefit.glowColor}25`" :stroke="benefit.glowColor" stroke-width="1.5"
+                  stroke-linejoin="round" />
+                <path d="M12 14c0-2.2 1.8-4 4-4s4 1.8 4 4" :stroke="benefit.glowColor" stroke-width="1.5"
+                  stroke-linecap="round" opacity="0.6" />
+                <line x1="16" y1="4" x2="16" y2="2" :stroke="benefit.glowColor" stroke-width="1.5"
+                  stroke-linecap="round" />
+                <line x1="6" y1="14" x2="4" y2="14" :stroke="benefit.glowColor" stroke-width="1.5"
+                  stroke-linecap="round" opacity="0.5" />
+                <line x1="26" y1="14" x2="28" y2="14" :stroke="benefit.glowColor" stroke-width="1.5"
+                  stroke-linecap="round" opacity="0.5" />
+              </svg>
+              <svg v-else-if="i === 1" viewBox="0 0 32 32" fill="none" class="w-7 h-7">
+                <rect x="2" y="18" width="20" height="9" rx="2" :fill="`${benefit.glowColor}20`"
+                  :stroke="benefit.glowColor" stroke-width="1.5" />
+                <path d="M22 21h4l3 3v3h-7v-6z" :fill="`${benefit.glowColor}20`" :stroke="benefit.glowColor"
+                  stroke-width="1.5" stroke-linejoin="round" />
+                <circle cx="7" cy="29" r="2" :fill="benefit.glowColor" />
+                <circle cx="20" cy="29" r="2" :fill="benefit.glowColor" />
+                <path d="M6 18v-4l4-4h8l4 4v4" :stroke="benefit.glowColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" opacity="0.6" />
+              </svg>
+              <svg v-else-if="i === 2" viewBox="0 0 32 32" fill="none" class="w-7 h-7">
+                <path d="M16 3L4 8v8c0 7 5 12 12 13 7-1 12-6 12-13V8L16 3z" :fill="`${benefit.glowColor}20`"
+                  :stroke="benefit.glowColor" stroke-width="1.5" stroke-linejoin="round" />
+                <path d="M10 16l4 4 8-8" :stroke="benefit.glowColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <svg v-else viewBox="0 0 32 32" fill="none" class="w-7 h-7">
+                <circle cx="16" cy="16" r="11" :fill="`${benefit.glowColor}20`" :stroke="benefit.glowColor"
+                  stroke-width="1.5" />
+                <path d="M16 8v8l5 3" :stroke="benefit.glowColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M5 16H2M30 16h-3M16 2V5M16 27v3" :stroke="benefit.glowColor" stroke-width="1.5"
+                  stroke-linecap="round" opacity="0.4" />
+              </svg>
             </div>
-            <h3 class="font-display font-bold text-forest-900 text-lg bangla mb-2">{{ benefit.title }}</h3>
-            <p class="text-gray-500 text-sm bangla leading-relaxed">{{ benefit.desc }}</p>
+
+            <h3 class="font-display font-bold text-gray-800 text-base bangla mb-2 leading-snug">
+              {{ benefit.title }}
+            </h3>
+            <p
+              class="text-gray-400 text-sm bangla leading-relaxed group-hover:text-gray-500 transition-colors duration-300">
+              {{ benefit.desc }}
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Categories Section -->
-    <section class="py-20 bg-gradient-to-br from-forest-800 to-forest-900 relative overflow-hidden">
-      <div class="absolute inset-0 opacity-5"
-        style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2260%22>🍃</text></svg>'); background-size: 100px;">
+    <section class="py-20 relative overflow-hidden"
+      style="background: linear-gradient(135deg, #0f2d1f 0%, #1a4731 40%, #0d3320 70%, #162b1e 100%);">
+
+      <!-- Decorative blobs -->
+      <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full opacity-20 blur-3xl pointer-events-none"
+        style="background: radial-gradient(circle, #22c55e, transparent 70%);"></div>
+      <div class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full opacity-15 blur-3xl pointer-events-none"
+        style="background: radial-gradient(circle, #4ade80, transparent 70%);"></div>
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-5 pointer-events-none"
+        style="background: radial-gradient(circle, #86efac, transparent 60%);"></div>
+
+      <!-- Subtle leaf pattern -->
+      <div class="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2260%22>🍃</text></svg>'); background-size: 80px;">
       </div>
+
       <div class="container mx-auto px-4 lg:px-8 relative">
-        <SectionHeader tag="পণ্য বিভাগ" tagIcon="📦" title="আমাদের পণ্য বিভাগ"
+        <SectionHeader tag="Products" tagIcon="📦" title="Top Categories"
           subtitle="সেরা মানের জৈব ও প্রাকৃতিক পণ্য বেছে নিন" titleClass="text-white" />
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+        <div class="grid grid-cols-3 md:grid-cols-6 gap-4">
           <RouterLink v-for="cat in productCategories" :key="cat.slug" :to="`/products?category=${cat.slug}`"
-            class="group relative rounded-2xl overflow-hidden aspect-square">
-            <img :src="cat.image" :alt="cat.name"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-forest-950/20 to-transparent" />
-            <div class="absolute inset-0 flex flex-col items-center justify-end p-5">
-              <span class="text-4xl mb-2">{{ cat.icon }}</span>
-              <h3 class="font-display font-bold text-dark text-lg bangla text-center">{{ cat.name }}</h3>
-              <span class="text-forest-300 text-xs bangla mt-1">{{ cat.count }}+ পণ্য</span>
-            </div>
+            class="group flex flex-col items-center rounded-2xl py-6 px-3 border transition-all duration-300 hover:-translate-y-1"
+            :class="cat.active
+              ? 'border-green-400/60 shadow-xl shadow-green-900/40'
+              : 'border-white/10 hover:border-white/30 hover:shadow-lg hover:shadow-black/30'"
+            :style="cat.active
+              ? 'background: linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08)); backdrop-filter: blur(12px);'
+              : 'background: linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03)); backdrop-filter: blur(8px);'">
+            <!-- Icon bubble -->
             <div
-              class="absolute top-3 right-3 w-8 h-8 bg-white/0 group-hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300">
-              <svg class="w-4 h-4 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
+              class="w-14 h-14 rounded-full flex items-center justify-center mb-3 text-2xl transition-transform duration-300 group-hover:scale-110"
+              :style="{ background: cat.bubbleColor, boxShadow: `0 4px 20px ${cat.glowColor}` }">
+              {{ cat.icon }}
             </div>
+
+            <!-- Name -->
+            <span class="text-sm font-semibold text-center leading-tight bangla transition-colors duration-200"
+              :class="cat.active ? 'text-white' : 'text-white/75 group-hover:text-white'">
+              {{ cat.name }}
+            </span>
+
+            <!-- Count -->
+            <span class="text-xs mt-1 transition-colors duration-200"
+              :class="cat.active ? 'text-green-300' : 'text-white/35 group-hover:text-white/55'">
+              ({{ cat.count }} item)
+            </span>
+
+            <!-- Active indicator dot -->
+            <div v-if="cat.active" class="w-1.5 h-1.5 rounded-full bg-green-400 mt-2 shadow-sm shadow-green-400"></div>
           </RouterLink>
         </div>
       </div>
     </section>
 
     <!-- Featured Products -->
-    <section class="py-20 bg-earth-100/60">
-      <div class="container mx-auto px-4 lg:px-8">
-        <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-12">
+    <section class="py-24 relative overflow-hidden"
+      style="background: linear-gradient(160deg, #f0fdf4 0%, #fafff7 40%, #f0fdfa 100%);">
+      <div class="absolute top-0 right-0 w-96 h-96 rounded-full opacity-30 blur-3xl pointer-events-none"
+        style="background: radial-gradient(circle, #bbf7d0, transparent 70%);"></div>
+      <div class="absolute bottom-0 left-0 w-72 h-72 rounded-full opacity-20 blur-3xl pointer-events-none"
+        style="background: radial-gradient(circle, #a7f3d0, transparent 70%);"></div>
+
+      <div class="container mx-auto px-4 lg:px-8 relative">
+        <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-14">
           <SectionHeader tag="বিশেষ পণ্য" tagIcon="⭐" title="জনপ্রিয় পণ্যসমূহ"
             subtitle="আমাদের সেরা বিক্রিত পণ্যগুলো দেখুন" :centered="false" />
-          <RouterLink to="/products" class="btn-secondary text-sm whitespace-nowrap mt-4 sm:mt-0 mb-0 sm:mb-12">
+          <RouterLink to="/products"
+            class="group flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold bangla border border-green-200 text-green-700 bg-white hover:bg-green-600 hover:text-white hover:border-green-600 transition-all duration-300 mt-4 sm:mt-0 mb-0 sm:mb-12 shadow-sm hover:shadow-md whitespace-nowrap">
             সব পণ্য দেখুন
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </RouterLink>
@@ -188,27 +302,86 @@
     </section>
 
     <!-- Farm-to-Table Process -->
-    <section class="py-20 bg-forest-50">
-      <div class="container mx-auto px-4 lg:px-8">
+    <section class="py-24 relative overflow-hidden"
+      style="background: linear-gradient(135deg, #0f2d1f 0%, #1a4731 45%, #0d3320 100%);">
+
+      <div class="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full opacity-10 blur-3xl pointer-events-none"
+        style="background: radial-gradient(circle, #4ade80, transparent 70%);"></div>
+      <div class="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full opacity-10 blur-3xl pointer-events-none"
+        style="background: radial-gradient(circle, #22c55e, transparent 70%);"></div>
+      <div class="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2260%22>🍃</text></svg>'); background-size: 80px;">
+      </div>
+
+      <div class="container mx-auto px-4 lg:px-8 relative">
         <SectionHeader tag="আমাদের প্রক্রিয়া" tagIcon="🚜" title="ফার্ম থেকে আপনার টেবিলে"
-          subtitle="প্রতিটি পণ্য যেভাবে আপনার কাছে পৌঁছায়" />
-        <div class="relative">
-          <!-- Connecting line -->
-          <div
-            class="hidden md:block absolute top-16 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-forest-200 via-forest-400 to-forest-200" />
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          subtitle="প্রতিটি পণ্য যেভাবে আপনার কাছে পৌঁছায়" titleClass="text-white" />
+
+        <div class="relative mt-4">
+          <!-- Connecting dashed line (desktop) -->
+          <div class="hidden md:flex absolute top-14 left-[12.5%] right-[12.5%] items-center pointer-events-none z-0">
+            <div class="flex-1 border-t-2 border-dashed border-green-500/30"></div>
+            <div class="w-2 h-2 rounded-full bg-green-500/40 mx-1"></div>
+            <div class="flex-1 border-t-2 border-dashed border-green-500/30"></div>
+            <div class="w-2 h-2 rounded-full bg-green-500/40 mx-1"></div>
+            <div class="flex-1 border-t-2 border-dashed border-green-500/30"></div>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 relative z-10">
             <div v-for="(step, i) in processSteps" :key="step.title"
-              class="flex flex-col items-center text-center animate-on-scroll"
+              class="group flex flex-col items-center text-center animate-on-scroll"
               :style="`transition-delay: ${i * 150}ms`">
+
+              <!-- Card -->
               <div
-                class="w-16 h-16 rounded-full bg-white border-4 border-forest-400 flex items-center justify-center text-2xl shadow-lg mb-4 relative z-10">
-                {{ step.icon }}
+                class="w-full rounded-2xl p-5 border border-white/10 hover:border-green-400/40 transition-all duration-300 hover:-translate-y-1"
+                style="background: linear-gradient(145deg, rgba(255,255,255,0.09), rgba(255,255,255,0.04)); backdrop-filter: blur(10px);">
+
+                <!-- SVG Icon Circle -->
+                <div class="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center relative"
+                  style="background: linear-gradient(135deg, rgba(74,222,128,0.2), rgba(34,197,94,0.1)); border: 1.5px solid rgba(74,222,128,0.3);">
+                  <!-- Step number badge -->
+                  <div
+                    class="absolute -top-2 -right-2 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white"
+                    style="background: linear-gradient(135deg, #16a34a, #059669);">
+                    {{ i + 1 }}
+                  </div>
+                  <!-- Inline SVG per step -->
+                  <svg v-if="i === 0" viewBox="0 0 40 40" fill="none" class="w-8 h-8">
+                    <path d="M20 6C13 6 8 11 8 18c0 5 3 9 7 11v3h10v-3c4-2 7-6 7-11 0-7-5-12-12-12z"
+                      fill="rgba(74,222,128,0.3)" stroke="#4ade80" stroke-width="1.5" />
+                    <path d="M15 18c0-3 2-5 5-5s5 2 5 5" stroke="#86efac" stroke-width="1.5" stroke-linecap="round" />
+                    <line x1="20" y1="6" x2="20" y2="3" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round" />
+                    <line x1="8" y1="18" x2="5" y2="18" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round" />
+                    <line x1="32" y1="18" x2="35" y2="18" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round" />
+                  </svg>
+                  <svg v-else-if="i === 1" viewBox="0 0 40 40" fill="none" class="w-8 h-8">
+                    <rect x="8" y="14" width="24" height="16" rx="3" fill="rgba(74,222,128,0.2)" stroke="#4ade80"
+                      stroke-width="1.5" />
+                    <path d="M14 14v-3a6 6 0 1112 0v3" stroke="#86efac" stroke-width="1.5" stroke-linecap="round" />
+                    <circle cx="20" cy="22" r="3" fill="#4ade80" />
+                    <line x1="20" y1="25" x2="20" y2="28" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round" />
+                  </svg>
+                  <svg v-else-if="i === 2" viewBox="0 0 40 40" fill="none" class="w-8 h-8">
+                    <rect x="7" y="18" width="26" height="12" rx="3" fill="rgba(74,222,128,0.2)" stroke="#4ade80"
+                      stroke-width="1.5" />
+                    <path d="M12 18v-3a8 3 0 0116 0v3" stroke="#86efac" stroke-width="1.5" stroke-linecap="round" />
+                    <circle cx="14" cy="24" r="2" fill="#4ade80" />
+                    <circle cx="20" cy="24" r="2" fill="#4ade80" />
+                    <circle cx="26" cy="24" r="2" fill="#4ade80" />
+                  </svg>
+                  <svg v-else viewBox="0 0 40 40" fill="none" class="w-8 h-8">
+                    <path d="M10 30 L10 20 L20 12 L30 20 L30 30 Z" fill="rgba(74,222,128,0.2)" stroke="#4ade80"
+                      stroke-width="1.5" stroke-linejoin="round" />
+                    <rect x="16" y="22" width="8" height="8" rx="1" fill="#4ade80" opacity="0.6" />
+                    <path d="M7 21 L20 10 L33 21" stroke="#86efac" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </div>
+
+                <h3 class="font-display font-bold text-white bangla mb-1.5 text-sm">{{ step.title }}</h3>
+                <p class="text-green-200/60 text-xs bangla leading-relaxed">{{ step.desc }}</p>
               </div>
-              <div
-                class="w-6 h-6 bg-forest-600 text-white rounded-full flex items-center justify-center text-xs font-bold mb-3">
-                {{ i + 1 }}</div>
-              <h3 class="font-display font-bold text-forest-900 bangla mb-2">{{ step.title }}</h3>
-              <p class="text-gray-500 text-sm bangla leading-relaxed">{{ step.desc }}</p>
             </div>
           </div>
         </div>
@@ -216,38 +389,70 @@
     </section>
 
     <!-- Health Tips Section -->
-    <section class="py-20 bg-gradient-to-br from-forest-800 to-forest-900 text-white relative overflow-hidden">
-      <div class="absolute inset-0 opacity-10"
-        style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2250%22>🌿</text></svg>'); background-size: 80px;">
-      </div>
+    <section class="py-24 relative overflow-hidden"
+      style="background: linear-gradient(160deg, #f0fdf4 0%, #fefce8 50%, #ecfdf5 100%);">
+
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-64 opacity-40 blur-3xl pointer-events-none"
+        style="background: radial-gradient(ellipse, #bbf7d0, transparent 70%);"></div>
+
       <div class="container mx-auto px-4 lg:px-8 relative">
         <SectionHeader tag="স্বাস্থ্য টিপস" tagIcon="💚" title="দৈনন্দিন স্বাস্থ্য টিপস"
-          subtitle="সুস্থ থাকুন, সুখী থাকুন" titleClass="text-white" />
+          subtitle="সুস্থ থাকুন, সুখী থাকুন" />
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div v-for="(tip, i) in healthTips" :key="tip.title"
-            class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 animate-on-scroll hover:bg-white/15 transition-colors"
-            :style="`transition-delay: ${i * 100}ms`">
-            <div class="text-4xl mb-4">{{ tip.icon }}</div>
-            <h3 class="font-display font-bold text-xl bangla mb-3">{{ tip.title }}</h3>
-            <p class="text-forest-200 bangla text-sm leading-relaxed">{{ tip.desc }}</p>
+            class="group relative rounded-2xl p-6 border border-white/80 hover:border-green-200 hover:-translate-y-1 transition-all duration-300 animate-on-scroll overflow-hidden"
+            :style="`transition-delay: ${i * 100}ms; background: linear-gradient(145deg, rgba(255,255,255,0.9), rgba(240,253,244,0.8)); backdrop-filter: blur(8px); box-shadow: 0 4px 24px rgba(34,197,94,0.08);`">
+
+            <!-- Corner gradient accent -->
+            <div class="absolute top-0 right-0 w-24 h-24 rounded-bl-full opacity-20 pointer-events-none"
+              :style="`background: radial-gradient(circle at top right, ${tip.accentColor}, transparent 70%);`"></div>
+
+            <!-- Icon with inline SVG background -->
+            <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 relative"
+              :style="`background: linear-gradient(135deg, ${tip.bgFrom}, ${tip.bgTo}); box-shadow: 0 4px 16px ${tip.glowColor};`">
+              <span class="text-2xl">{{ tip.icon }}</span>
+            </div>
+
+            <h3 class="font-display font-bold text-gray-800 text-lg bangla mb-2">{{ tip.title }}</h3>
+            <p class="text-gray-500 bangla text-sm leading-relaxed">{{ tip.desc }}</p>
+
+            <!-- Bottom accent line -->
+            <div
+              class="absolute bottom-0 left-0 right-0 h-0.5 rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              :style="`background: linear-gradient(90deg, transparent, ${tip.accentColor}, transparent);`"></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Blog Preview -->
-    <section class="py-20 bg-earth-100/60">
-      <div class="container mx-auto px-4 lg:px-8">
-        <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-12">
+    <section class="py-24 relative overflow-hidden"
+      style="background: linear-gradient(135deg, #0f2d1f 0%, #1a4731 45%, #0d3320 100%);">
+
+      <div class="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10 blur-3xl pointer-events-none"
+        style="background: radial-gradient(circle, #4ade80, transparent 70%);"></div>
+      <div class="absolute bottom-0 left-0 w-72 h-72 rounded-full opacity-10 blur-3xl pointer-events-none"
+        style="background: radial-gradient(circle, #22c55e, transparent 70%);"></div>
+      <div class="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2260%22>📖</text></svg>'); background-size: 90px;">
+      </div>
+
+      <div class="container mx-auto px-4 lg:px-8 relative">
+        <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-14">
           <SectionHeader tag="স্বাস্থ্য ব্লগ" tagIcon="📖" title="সর্বশেষ নিবন্ধসমূহ"
-            subtitle="পুষ্টি ও স্বাস্থ্য সম্পর্কে জানুন" :centered="false" />
-          <RouterLink to="/blog" class="btn-secondary text-sm mt-4 sm:mt-0 mb-0 sm:mb-12 whitespace-nowrap">
+            subtitle="পুষ্টি ও স্বাস্থ্য সম্পর্কে জানুন" :centered="false" titleClass="text-white" />
+          <RouterLink to="/blog"
+            class="group flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold bangla border border-white/20 text-white/80 hover:bg-white hover:text-green-800 hover:border-white transition-all duration-300 mt-4 sm:mt-0 mb-0 sm:mb-12 whitespace-nowrap backdrop-blur-sm"
+            style="background: rgba(255,255,255,0.08);">
             সব পড়ুন
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </RouterLink>
         </div>
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <BlogCard v-for="post in latestPosts" :key="post.id" :post="post" class="animate-on-scroll" />
         </div>
@@ -322,17 +527,91 @@ const stats = [
 ]
 
 const benefits = [
-  { icon: '🌿', title: '১০০% প্রাকৃতিক', desc: 'কোনো রাসায়নিক সার বা কীটনাশক ব্যবহার করা হয় না।', bgColor: 'bg-forest-100' },
-  { icon: '🚜', title: 'সরাসরি ফার্ম থেকে', desc: 'মধ্যস্থকারী ছাড়াই সরাসরি কৃষক থেকে আপনার কাছে।', bgColor: 'bg-earth-100' },
-  { icon: '🧪', title: 'মানসম্পন্ন পরীক্ষিত', desc: 'প্রতিটি পণ্য ল্যাবে পরীক্ষিত ও মানসম্পন্ন।', bgColor: 'bg-cream-200' },
-  { icon: '🚚', title: 'দ্রুত ডেলিভারি', desc: '২৪-৪৮ ঘণ্টার মধ্যে আপনার দরজায় পৌঁছে দেওয়া হয়।', bgColor: 'bg-forest-100' },
+  {
+    title: '১০০% প্রাকৃতিক',
+    desc: 'কোনো রাসায়নিক সার বা কীটনাশক ব্যবহার করা হয় না।',
+    bgFrom: '#dcfce7',
+    bgTo: '#bbf7d0',
+    glowColor: '#16a34a',
+  },
+  {
+    title: 'সরাসরি ফার্ম থেকে',
+    desc: 'মধ্যস্থকারী ছাড়াই সরাসরি কৃষক থেকে আপনার কাছে।',
+    bgFrom: '#fef9c3',
+    bgTo: '#fde68a',
+    glowColor: '#d97706',
+  },
+  {
+    title: 'মানসম্পন্ন পরীক্ষিত',
+    desc: 'প্রতিটি পণ্য ল্যাবে পরীক্ষিত ও মানসম্পন্ন।',
+    bgFrom: '#dbeafe',
+    bgTo: '#bfdbfe',
+    glowColor: '#2563eb',
+  },
+  {
+    title: 'দ্রুত ডেলিভারি',
+    desc: '২৪-৪৮ ঘণ্টার মধ্যে আপনার দরজায় পৌঁছে দেওয়া হয়।',
+    bgFrom: '#f3e8ff',
+    bgTo: '#e9d5ff',
+    glowColor: '#9333ea',
+  },
 ]
 
 const productCategories = [
-  { name: 'জৈব খাদ্য', slug: 'organic', icon: '🌾', count: '১০', image: 'https://images.unsplash.com/photo-1728895604559-a4e16081504e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
-  { name: 'প্রাকৃতিক মধু', slug: 'honey', icon: '🍯', count: '৫', image: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=500&q=80' },
-  { name: 'শস্য ও ডাল', slug: 'grains', icon: '🌿', count: '১৫', image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500&q=80' },
-  { name: 'শুকনো খাবার', slug: 'dry', icon: '🌰', count: '৮', image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=500&q=80' },
+  {
+    slug: 'vegetables',
+    name: 'Vegetables',
+    icon: '🥦',
+    count: 140,
+    bubbleColor: 'linear-gradient(135deg, #bbf7d0, #86efac)',
+    glowColor: 'rgba(134,239,172,0.35)',
+    active: true,
+  },
+  {
+    slug: 'fruits',
+    name: 'Fruits',
+    icon: '🍎',
+    count: 45,
+    bubbleColor: 'linear-gradient(135deg, #fed7aa, #fdba74)',
+    glowColor: 'rgba(253,186,116,0.35)',
+    active: false,
+  },
+  {
+    slug: 'meat',
+    name: 'Meat',
+    icon: '🥩',
+    count: 25,
+    bubbleColor: 'linear-gradient(135deg, #fecaca, #fca5a5)',
+    glowColor: 'rgba(252,165,165,0.35)',
+    active: false,
+  },
+  {
+    slug: 'fish',
+    name: 'Fish',
+    icon: '🐟',
+    count: 38,
+    bubbleColor: 'linear-gradient(135deg, #bfdbfe, #93c5fd)',
+    glowColor: 'rgba(147,197,253,0.35)',
+    active: false,
+  },
+  {
+    slug: 'dairy',
+    name: 'Dairy & Milk',
+    icon: '🥛',
+    count: 52,
+    bubbleColor: 'linear-gradient(135deg, #fef9c3, #fde68a)',
+    glowColor: 'rgba(253,230,138,0.35)',
+    active: false,
+  },
+  {
+    slug: 'browse-all',
+    name: 'Browse All',
+    icon: '🛒',
+    count: 240,
+    bubbleColor: 'linear-gradient(135deg, #e9d5ff, #c4b5fd)',
+    glowColor: 'rgba(196,181,253,0.35)',
+    active: false,
+  },
 ]
 
 const processSteps = [
@@ -343,9 +622,33 @@ const processSteps = [
 ]
 
 const healthTips = [
-  { icon: '💧', title: 'পর্যাপ্ত পানি পান', desc: 'প্রতিদিন কমপক্ষে ৮-১০ গ্লাস পানি পান করুন। সকালে খালি পেটে ১ গ্লাস উষ্ণ পানি শরীর পরিষ্কার রাখে।' },
-  { icon: '🥗', title: 'তাজা শাকসবজি খান', desc: 'প্রতিদিনের খাবারে রঙিন শাকসবজি রাখুন। জৈব সবজিতে বেশি পুষ্টিগুণ থাকে।' },
-  { icon: '🕐', title: 'নিয়মিত সময়ে খান', desc: 'প্রতিদিন একই সময়ে খাবার খাওয়ার অভ্যাস করুন। সকালের নাস্তা কখনো বাদ দেবেন না।' },
+  {
+    icon: '🥗',
+    title: 'সুষম খাদ্যাভ্যাস',
+    desc: 'প্রতিদিন তাজা শাকসবজি ও ফলমূল খান। রাসায়নিক মুক্ত জৈব খাবার বেছে নিন।',
+    accentColor: '#4ade80',
+    bgFrom: '#dcfce7',
+    bgTo: '#bbf7d0',
+    glowColor: 'rgba(74,222,128,0.25)',
+  },
+  {
+    icon: '💧',
+    title: 'পর্যাপ্ত পানি পান',
+    desc: 'প্রতিদিন কমপক্ষে ৮ গ্লাস বিশুদ্ধ পানি পান করুন। শরীর সুস্থ রাখুন।',
+    accentColor: '#60a5fa',
+    bgFrom: '#dbeafe',
+    bgTo: '#bfdbfe',
+    glowColor: 'rgba(96,165,250,0.25)',
+  },
+  {
+    icon: '🌙',
+    title: 'পর্যাপ্ত ঘুম',
+    desc: 'প্রতিরাতে ৭-৮ ঘন্টা ঘুমান। ভালো ঘুম শরীর ও মনকে সতেজ রাখে।',
+    accentColor: '#c084fc',
+    bgFrom: '#f3e8ff',
+    bgTo: '#e9d5ff',
+    glowColor: 'rgba(192,132,252,0.25)',
+  },
 ]
 
 const testimonials = [
