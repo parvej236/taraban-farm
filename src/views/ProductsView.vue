@@ -7,13 +7,13 @@
       <div class="container mx-auto px-4 lg:px-8 py-8">
 
         <!-- Sticky Toolbar -->
-        <div class="sticky top-14 z-40 mb-8">
-          <div class="rounded-2xl border border-white/60 shadow-lg shadow-green-100/50 backdrop-blur-md px-5 py-4"
+        <div class="sticky top-14 z-40 mb-6 sm:mb-8 min-w-0">
+          <div class="rounded-2xl border border-white/60 shadow-lg shadow-green-100/50 backdrop-blur-md px-4 py-4 sm:px-5 min-w-0"
             style="background: rgba(255,255,255,0.85);">
-            <div class="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
+            <div class="flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between min-w-0">
 
               <!-- Category Pills -->
-              <div class="flex flex-wrap gap-2">
+              <div class="flex flex-wrap gap-2 min-w-0 w-full md:w-auto">
                 <button v-for="cat in categories" :key="cat.slug" @click="activeCategory = cat.slug"
                   class="group flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold bangla transition-all duration-300"
                   :style="activeCategory === cat.slug ? cat.activeStyle : ''"
@@ -26,10 +26,10 @@
               </div>
 
               <!-- Search & Sort -->
-              <div class="flex gap-3 items-center flex-shrink-0">
-                <div class="relative">
+              <div class="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center w-full md:w-auto md:flex-shrink-0 min-w-0">
+                <div class="relative w-full sm:w-52 min-w-0">
                   <input v-model="searchQuery" type="text" placeholder="Search by name.."
-                    class="pl-9 pr-4 py-2 w-52 text-sm rounded-xl border border-gray-200 bg-white/80 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-200 bangla" />
+                    class="pl-9 pr-4 py-2 w-full min-w-0 text-sm rounded-xl border border-gray-200 bg-white/80 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-200 bangla" />
                   <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none"
                     viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -37,7 +37,7 @@
                   </svg>
                 </div>
                 <select v-model="sortBy"
-                  class="pl-3 pr-8 py-2 w-48 text-sm rounded-xl border border-gray-200 bg-white/80 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-200 bangla appearance-none cursor-pointer">
+                  class="pl-3 pr-8 py-2 w-full sm:w-48 min-w-0 text-sm rounded-xl border border-gray-200 bg-white/80 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-200 bangla appearance-none cursor-pointer">
                   <option value="default">Defalut</option>
                   <option value="price-low">Price: Low to High</option>
                   <option value="price-high">Price: High to Low</option>

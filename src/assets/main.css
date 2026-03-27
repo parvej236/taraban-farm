@@ -159,11 +159,17 @@ body {
   @apply animate-pulse bg-forest-100 rounded-lg;
 }
 
-/* Product grid */
+/* Product grid — min() keeps tracks within the container on narrow viewports */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
   gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .product-grid {
+    gap: 1rem;
+  }
 }
 
 /* Star rating */
