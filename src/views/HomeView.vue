@@ -2,7 +2,7 @@
   <div>
     <!-- Hero Section -->
     <section
-      class="relative min-h-screen flex items-center bg-gradient-to-br from-orange-950 via-forest-900 to-forest-800 overflow-hidden">
+      class="relative min-h-screen flex items-center bg-gradient-to-br from-earth-800 via-forest-900 to-forest-800 overflow-hidden">
       <!-- Animated background elements -->
       <div class="absolute inset-0">
         <div class="absolute top-20 right-10 w-72 h-72 bg-forest-600/20 blob animate-float"
