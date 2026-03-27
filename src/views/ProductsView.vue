@@ -6,7 +6,7 @@
     <section class="py-3 bg-earth-100/60 min-h-screen">
       <div class="container mx-auto px-4 lg:px-8">
         <!-- Toolbar -->
-        <div class="sticky top-16 z-40 bg-earth-100/95 backdrop-blur supports-[backdrop-filter]:bg-earth-100/80
+        <div class="sticky top-14 z-40 bg-earth-100/95 backdrop-blur supports-[backdrop-filter]:bg-earth-100/80
          flex flex-col md:flex-row gap-4 items-start md:items-center justify-between 
          mb-8 py-3 border-b border-gray-200">
           <!-- Category Filters -->
