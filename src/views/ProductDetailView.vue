@@ -1,9 +1,9 @@
 <template>
-  <div v-if="product" class="bg-[#fafaf7] min-h-screen">
+  <div v-if="product" class="bg-earth-100/60 min-h-screen">
     <!-- Breadcrumb -->
-    <div class="bg-white border-b border-forest-100 pt-20">
+    <div class="bg-gradient-to-br from-forest-900 via-forest-800 to-forest-700 border-b border-forest-100 pt-20">
       <div class="container mx-auto px-4 lg:px-8 py-3">
-        <nav class="flex items-center gap-2 text-sm bangla text-gray-500">
+        <nav class="flex items-center gap-2 text-sm bangla text-white">
           <RouterLink to="/" class="hover:text-forest-700 transition-colors">হোম</RouterLink>
           <span>/</span>
           <RouterLink to="/products" class="hover:text-forest-700 transition-colors">পণ্যসমূহ</RouterLink>

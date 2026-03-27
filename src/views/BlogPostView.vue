@@ -1,17 +1,17 @@
 <template>
-  <div v-if="post" class="bg-[#fafaf7] min-h-screen">
+  <div v-if="post" class="bg-gradient-to-br from-forest-900 via-forest-800 to-forest-700 min-h-screen">
     <!-- Hero Image -->
     <div class="relative h-[50vh] min-h-[400px] overflow-hidden pt-20">
       <img :src="post.image" :alt="post.title" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-forest-900/30 to-transparent" />
       <div class="absolute bottom-0 left-0 right-0 p-8 md:p-12">
         <div class="container mx-auto">
-          <div class="flex items-center gap-3 mb-4 bangla text-sm text-forest-200">
+          <div class="flex items-center gap-3 mb-4 bangla text-sm text-forest-900">
             <RouterLink to="/blog" class="hover:text-white transition-colors">ব্লগ</RouterLink>
             <span>/</span>
             <span class="badge bg-forest-600 text-white">{{ post.category }}</span>
           </div>
-          <h1 class="font-display text-3xl md:text-5xl font-bold text-white bangla max-w-3xl leading-tight">
+          <h1 class="font-display text-3xl md:text-5xl font-bold text-forest-900 bangla max-w-3xl leading-tight">
             {{ post.title }}
           </h1>
         </div>

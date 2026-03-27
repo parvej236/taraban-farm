@@ -353,11 +353,11 @@ export const entrepreneurs = [
 export const teamMembers = [
   {
     id: 1,
-    name: 'আহমেদ হোসেন',
-    nameEn: 'Ahmed Hossain',
+    name: 'সৈয়দ আল আমীন',
+    nameEn: 'Sayeed Al Ameen',
     role: 'প্রতিষ্ঠাতা ও সিইও',
     roleEn: 'Founder & CEO',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80',
+    image: 'src/assets/images/alameenvai.png',
     bio: 'কৃষি ও পুষ্টি বিজ্ঞানে পিএইচডি। তারাবান ফার্মের স্বপ্নদ্রষ্টা।',
   },
   {

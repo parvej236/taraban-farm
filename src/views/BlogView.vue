@@ -8,7 +8,7 @@
       :breadcrumbs="[{ label: 'স্বাস্থ্য ব্লগ' }]"
     />
 
-    <section class="py-12 bg-[#fafaf7] min-h-screen">
+    <section class="py-12 bg-earth-100/60 min-h-screen">
       <div class="container mx-auto px-4 lg:px-8">
         <!-- Featured Post -->
         <div class="mb-12 animate-on-scroll">

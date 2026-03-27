@@ -26,7 +26,7 @@
       </div>
 
       <!-- Items -->
-      <div class="flex-1 overflow-y-auto px-6 py-4">
+      <div class="flex-1 bg-earth-100/60 overflow-y-auto px-6 py-4">
         <!-- Empty State -->
         <div v-if="cartStore.isEmpty" class="flex flex-col items-center justify-center h-full gap-4 py-12">
           <div class="w-24 h-24 bg-forest-50 rounded-full flex items-center justify-center">

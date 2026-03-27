@@ -8,7 +8,7 @@
       :breadcrumbs="[{ label: 'পণ্যসমূহ' }]"
     />
 
-    <section class="py-12 bg-[#fafaf7] min-h-screen">
+    <section class="py-12 bg-earth-100/60 min-h-screen">
       <div class="container mx-auto px-4 lg:px-8">
         <!-- Toolbar -->
         <div class="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between mb-8">
