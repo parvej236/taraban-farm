@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-forest-950 text-white">
+  <footer class="bg-forest-900 text-white">
     <!-- Newsletter Banner -->
     <div class="bg-forest-800 py-10">
       <div class="container mx-auto px-4 lg:px-8">
