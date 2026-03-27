@@ -34,28 +34,34 @@
               নেই, শুধু খাঁটি প্রকৃতি।
             </p>
 
-            <div class="flex flex-wrap gap-4">
-              <RouterLink to="/products" class="btn-accent text-base px-8 py-4 shadow-2xl shadow-earth-900/30">
-                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="flex flex-nowrap items-center gap-2 sm:gap-4 w-full max-w-xl min-w-0">
+              <RouterLink to="/products"
+                class="btn-accent flex-1 min-w-0 justify-center text-sm sm:text-base px-3 py-3 sm:px-8 sm:py-4 shadow-2xl shadow-earth-900/30 whitespace-nowrap">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 7H4l1-7z" />
                 </svg>
-                <span class="bangla">পণ্য দেখুন</span>
+                <span class="bangla truncate">পণ্য দেখুন</span>
               </RouterLink>
               <RouterLink to="/about"
-                class="inline-flex items-center gap-2 text-white border border-white/30 hover:bg-white/10 px-8 py-4 rounded-full font-semibold transition-all duration-300 bangla text-base">
-                আমাদের গল্প
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                class="inline-flex flex-1 min-w-0 items-center justify-center gap-1 sm:gap-2 text-white border border-white/30 hover:bg-white/10 px-3 py-3 sm:px-8 sm:py-4 rounded-full font-semibold transition-all duration-300 bangla text-sm sm:text-base whitespace-nowrap">
+                <span class="truncate">আমাদের গল্প</span>
+                <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 hidden sm:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                 </svg>
               </RouterLink>
             </div>
 
             <!-- Stats -->
-            <div class="flex flex-wrap gap-8 mt-12 pt-8 border-t border-forest-700/50">
-              <div v-for="stat in stats" :key="stat.label">
-                <div class="font-display text-3xl font-extrabold text-white">{{ stat.value }}</div>
-                <div class="text-forest-400 text-sm bangla mt-1">{{ stat.label }}</div>
+            <div
+              class="flex flex-nowrap items-start justify-between gap-2 sm:gap-4 md:gap-8 mt-12 pt-8 border-t border-forest-700/50 min-w-0">
+              <div v-for="stat in stats" :key="stat.label" class="min-w-0 flex-1 text-center">
+                <div class="font-display text-xl sm:text-2xl md:text-3xl font-extrabold text-white tabular-nums leading-tight">
+                  {{ stat.value }}
+                </div>
+                <div class="text-forest-400 text-[11px] sm:text-xs md:text-sm bangla mt-1 leading-snug px-0.5">
+                  {{ stat.label }}
+                </div>
               </div>
             </div>
           </div>
