@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-[#fafaf7] pt-20">
+  <div class="min-h-screen bg-forest-900 pt-20">
     <div class="container mx-auto px-4 lg:px-8 py-8">
       <div class="grid lg:grid-cols-4 gap-8">
         <!-- Sidebar -->
