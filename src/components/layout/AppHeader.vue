@@ -13,7 +13,7 @@
           <div>
             <div class="font-display font-bold text-lg leading-tight transition-colors"
               :class="scrolled ? 'text-forest-900' : 'text-white'">
-              তারাবান ফার্ম
+              Safe Food Movement
             </div>
             <div class="text-xs bangla leading-tight transition-colors"
               :class="scrolled ? 'text-forest-600' : 'text-forest-200'">

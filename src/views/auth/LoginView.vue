@@ -10,7 +10,7 @@
             class="w-14 h-14 rounded-full object-contain bg-cream-100 shadow-lg ring-1 ring-white/10"
           />
           <div class="text-left">
-            <div class="font-display font-bold text-2xl text-white">তারাবান ফার্ম</div>
+            <div class="font-display font-bold text-2xl text-white">Safe Food Movement</div>
             <div class="text-forest-400 text-sm">সুস্থ্যতার জন্য নিরাপদ খাদ্য</div>
           </div>
         </RouterLink>

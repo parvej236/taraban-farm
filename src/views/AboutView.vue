@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PageHero title="আমাদের সম্পর্কে" subtitle="তারাবান ফার্মের যাত্রা, দর্শন এবং দলের পরিচয়" tag="আমাদের গল্প"
+    <PageHero title="আমাদের সম্পর্কে" subtitle="Safe Food Movement এর যাত্রা, দর্শন এবং দলের পরিচয়" tag="আমাদের গল্প"
       tagIcon="🌿" :breadcrumbs="[{ label: 'আমাদের সম্পর্কে' }]" />
 
     <!-- Story Section -->
@@ -16,7 +16,7 @@
             </div>
 
             <h2 class="section-title bangla mb-6">
-              কীভাবে শুরু হলো তারাবান ফার্ম
+              কীভাবে শুরু হলো Safe Food Movement
             </h2>
 
             <div class="space-y-6 text-gray-600 bangla leading-relaxed">
@@ -39,7 +39,7 @@
                 <span class="font-semibold text-forest-700">
                   “যদি মানুষকে সত্যিই নিরাপদ ও পুষ্টিকর খাবার দেওয়া যেত?”
                 </span>
-                এই চিন্তা থেকেই জন্ম নেয় <strong>তারাবান ফার্ম</strong>।
+                এই চিন্তা থেকেই জন্ম নেয় <strong>Safe Food Movement</strong>।
               </p>
 
               <!-- Start -->
@@ -89,14 +89,14 @@
                   <li>নতুন কৃষক ও উদ্যোক্তারা যুক্ত হন</li>
                 </ul>
                 <p class="mt-2">
-                  তারাবান ফার্ম ধীরে ধীরে একটি <strong>নিরাপদ খাদ্য আন্দোলনে</strong> রূপ নেয়।
+                  Safe Food Movement ধীরে ধীরে একটি <strong>নিরাপদ খাদ্য আন্দোলনে</strong> রূপ নেয়।
                 </p>
               </div>
 
               <!-- Current -->
               <div>
                 <h3 class="text-xl font-semibold text-gray-800 mb-2">
-                  আজকের তারাবান ফার্ম
+                  আজকের Safe Food Movement
                 </h3>
                 <ul class="list-disc pl-6 space-y-1">
                   <li>১৫টিরও বেশি কৃষক ও উদ্যোক্তার সাথে কাজ করছে</li>
@@ -206,7 +206,7 @@
     <!-- Farm-to-Table Timeline -->
     <section class="py-20 bg-[#fafaf7]">
       <div class="container mx-auto px-4 lg:px-8">
-        <SectionHeader tag="আমাদের যাত্রা" tagIcon="📅" title="তারাবান ফার্মের ইতিহাস" />
+        <SectionHeader tag="আমাদের যাত্রা" tagIcon="📅" title="Safe Food Movement এর ইতিহাস" />
         <div class="max-w-3xl mx-auto">
           <div v-for="(event, i) in timeline" :key="event.year" class="flex gap-6 animate-on-scroll"
             :style="`transition-delay: ${i * 100}ms`">
@@ -277,7 +277,7 @@ const values = [
 ]
 
 const timeline = [
-  { year: '২০২৩', title: 'তারাবান ফার্মের প্রতিষ্ঠা', desc: 'চট্টগ্রামের লামার কোয়ন্টামমে এক স্বপ্নবাসের ভাবনার মাধ্যমে যাত্রা শুরু।' },
+  { year: '২০২৩', title: 'Safe Food Movement এর প্রতিষ্ঠা', desc: 'চট্টগ্রামের লামার কোয়ন্টামমে এক স্বপ্নবাসের ভাবনার মাধ্যমে যাত্রা শুরু।' },
   { year: '২০২৪', title: 'প্রথম ১০০ গ্রাহক', desc: 'অনলাইন বিক্রয় শুরু এবং ১০০ পরিবারে পণ্য পৌঁছানো সম্পন্ন।' },
   { year: '২০২৫', title: 'সম্প্রসারণ ও স্বীকৃতি', desc: '১৫+ উদ্যোক্তার সাথে চুক্তি, জাতীয় পুরস্কার অর্জন।' },
   { year: '২০২৬', title: 'ডিজিটাল প্ল্যাটফর্ম', desc: 'সম্পূর্ণ অনলাইন ই-কমার্স প্ল্যাটফর্ম চালু, ৫০০+ গ্রাহক।' },

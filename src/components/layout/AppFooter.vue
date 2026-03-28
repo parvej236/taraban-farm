@@ -35,8 +35,8 @@
               class="w-12 h-12 rounded-full object-contain bg-cream-100 ring-1 ring-white/10"
             />
             <div>
-              <div class="font-display font-bold text-xl">তারাবান ফার্ম</div>
-              <div class="text-forest-400 text-sm">Taraban Farm</div>
+              <div class="font-display font-bold text-xl">Safe Food Movement</div>
+              <div class="text-forest-400 text-sm">সুস্থ্যতার জন্য নিরাপদ খাদ্য</div>
             </div>
           </div>
           <p class="text-forest-300 bangla text-sm leading-relaxed mb-6">
@@ -112,7 +112,7 @@
     <div class="border-t border-forest-900 py-6">
       <div class="container mx-auto px-4 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-3">
         <p class="text-forest-500 bangla text-sm">
-          ©২০২৬ তারাবান ফার্ম। {{ t('footer.rights') }}।
+          ©2026 Safe Food Movement। {{ t('footer.rights') }}।
         </p>
         <div class="flex items-center gap-4">
           <RouterLink to="/about" class="text-forest-500 hover:text-forest-300 text-xs bangla transition-colors">গোপনীয়তা নীতি</RouterLink>

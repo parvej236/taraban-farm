@@ -6,7 +6,7 @@ const routes = [
     path: '/',
     name: 'Home',
     component: () => import('@/views/HomeView.vue'),
-    meta: { title: 'তারাবান ফার্ম - সুস্থ্যতার জন্য নিরাপদ খাদ্য' },
+    meta: { title: 'Safe Food Movement- সুস্থ্যতার জন্য নিরাপদ খাদ্য' },
   },
   {
     path: '/products',
@@ -117,7 +117,7 @@ const router = createRouter({
 
 // Navigation guards
 router.beforeEach((to, from, next) => {
-  document.title = to.meta.title || 'তারাবান ফার্ম'
+  document.title = to.meta.title || 'Safe Food Movement'
   const authStore = useAuthStore()
 
   if (to.meta.requiresAuth && !authStore.isAuthenticated) {

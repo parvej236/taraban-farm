@@ -14,7 +14,7 @@
           tag="আমাদের পরিবার"
           tagIcon="🌿"
           title="পরিচয় করুন আমাদের সাথে"
-          subtitle="তারাবান ফার্মের প্রতিটি পণ্যের পেছনে আছে একটি পরিবারের গল্প"
+          subtitle="Safe Food Movement এর প্রতিটি পণ্যের পেছনে আছে একটি পরিবারের গল্প"
         />
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -34,7 +34,7 @@
       <div class="container mx-auto px-4 lg:px-8">
         <SectionHeader
           title="আমাদের প্রভাব"
-          subtitle="তারাবান ফার্ম কৃষক ও গ্রামীণ অর্থনীতিতে যে পরিবর্তন আনছে"
+          subtitle="Safe Food Movement কৃষক ও গ্রামীণ অর্থনীতিতে যে পরিবর্তন আনছে"
           titleClass="text-white"
         />
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -52,7 +52,7 @@
         <div class="text-5xl mb-6">🤝</div>
         <h2 class="font-display text-3xl md:text-4xl font-bold text-forest-900 bangla mb-4">আপনিও যোগ দিন</h2>
         <p class="text-gray-600 bangla text-lg leading-relaxed mb-8">
-          আপনি কি একজন কৃষক বা উদ্যোক্তা? তারাবান ফার্মের সাথে যুক্ত হয়ে আপনার পণ্য সারা দেশে পৌঁছে দিন।
+          আপনি কি একজন কৃষক বা উদ্যোক্তা? Safe Food Movement এর সাথে যুক্ত হয়ে আপনার পণ্য সারা দেশে পৌঁছে দিন।
         </p>
         <RouterLink to="/contact" class="btn-primary text-base px-10 py-4">
           আমাদের সাথে যোগাযোগ করুন

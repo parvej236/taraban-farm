@@ -30,7 +30,7 @@
             </h1>
 
             <p class="text-forest-200 text-lg md:text-xl bangla leading-relaxed mb-8 max-w-xl">
-              তারাবান ফার্ম থেকে সরাসরি আপনার দরজায় পৌঁছে যাচ্ছে প্রকৃতির সেরা জৈব ও নিরাপদ খাদ্যপণ্য। কোনো রাসায়নিক
+              Safe Food Movement থেকে সরাসরি আপনার দরজায় পৌঁছে যাচ্ছে প্রকৃতির সেরা জৈব ও নিরাপদ খাদ্যপণ্য। কোনো রাসায়নিক
               নেই, শুধু খাঁটি প্রকৃতি।
             </p>
 
@@ -128,7 +128,7 @@
         style="background: radial-gradient(ellipse, #d1fae5, transparent 60%);"></div>
 
       <div class="container mx-auto px-4 lg:px-8 relative">
-        <SectionHeader tag="কেন তারাবান ফার্ম?" tagIcon="🌱" title="আমাদের প্রতিশ্রুতি"
+        <SectionHeader tag="কেন Safe Food Movement?" tagIcon="🌱" title="আমাদের প্রতিশ্রুতি"
           subtitle="আমরা বিশ্বাস করি প্রতিটি পরিবার নিরাপদ ও পুষ্টিকর খাদ্য পাওয়ার অধিকার রাখে।" />
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -651,13 +651,13 @@ const healthTips = [
 
 const testimonials = [
   {
-    text: 'তারাবান ফার্মের মধু সত্যিই অসাধারণ! পরিবারের সবাই এখন প্রতিদিন সকালে মধু খায়। স্বাদ ও গুণমান দুটোই অতুলনীয়।',
+    text: 'Safe Food Movement এর মধু সত্যিই অসাধারণ! পরিবারের সবাই এখন প্রতিদিন সকালে মধু খায়। স্বাদ ও গুণমান দুটোই অতুলনীয়।',
     name: 'রেহানা বেগম',
     location: 'ঢাকা',
     avatar: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=100&q=80',
   },
   {
-    text: 'লাল চালের ভাত খেয়ে আমার ডায়াবেটিস অনেক নিয়ন্ত্রণে এসেছে। ডাক্তারও অবাক হয়েছেন। তারাবান ফার্মকে ধন্যবাদ।',
+    text: 'লাল চালের ভাত খেয়ে আমার ডায়াবেটিস অনেক নিয়ন্ত্রণে এসেছে। ডাক্তারও অবাক হয়েছেন। Safe Food Movement কে ধন্যবাদ।',
     name: 'মোহাম্মদ হাসান',
     location: 'চট্টগ্রাম',
     avatar: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100&q=80',
