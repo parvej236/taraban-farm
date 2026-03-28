@@ -133,10 +133,10 @@
             {{ t(`nav.${link.key}`) }}
           </RouterLink>
           <div class="flex gap-2 mt-2 pt-2 border-t border-forest-100">
-            <button @click="toggleLocale"
+            <!-- <button @click="toggleLocale"
               class="flex-1 py-2 rounded-xl border border-forest-300 text-forest-700 text-sm font-bold">
               {{ locale === 'bn' ? 'Switch to English' : 'বাংলায় দেখুন' }}
-            </button>
+            </button> -->
             <RouterLink v-if="!authStore.isAuthenticated" to="/login" @click="mobileMenuOpen = false"
               class="flex-1 btn-primary text-sm py-2 justify-center">
               {{ t('nav.login') }}
