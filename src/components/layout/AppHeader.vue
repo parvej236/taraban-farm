@@ -8,7 +8,7 @@
       <div class="flex items-center justify-between">
         <!-- Logo -->
         <RouterLink to="/" class="flex items-center gap-3 group">
-          <img :src="logoUrl" alt="Taraban Farm"
+          <img :src="logoUrl" alt="Safe Food Movement"
             class="w-10 h-10 rounded-full object-contain bg-cream-100 shadow-lg ring-1 ring-black/5 group-hover:shadow-xl transition-all" />
           <div>
             <div class="font-display font-bold text-lg leading-tight transition-colors"

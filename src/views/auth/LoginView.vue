@@ -6,7 +6,7 @@
         <RouterLink to="/" class="inline-flex items-center gap-3">
           <img
             :src="logoUrl"
-            alt="Taraban Farm"
+            alt="Safe Food Movement"
             class="w-14 h-14 rounded-full object-contain bg-cream-100 shadow-lg ring-1 ring-white/10"
           />
           <div class="text-left">

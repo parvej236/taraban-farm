@@ -124,7 +124,7 @@ const form = reactive({ name: '', email: '', phone: '', subject: '', message: ''
 const contactInfoList = [
   { icon: '📍', title: 'ঠিকানা', value: 'রোড ৫, বাড়ি ১২, দিনাজপুর, বাংলাদেশ' },
   { icon: '📞', title: 'ফোন', value: '+880 1670-394056 (সকাল ৯টা - রাত ৯টা)' },
-  { icon: '📧', title: 'ইমেইল', value: 'info@tarabanfarm.com' },
+  { icon: '📧', title: 'ইমেইল', value: 'info@safefoodmovement.com' },
   { icon: '⏰', title: 'কার্যসময়', value: 'শনিবার - বৃহস্পতিবার, সকাল ৯টা - রাত ৯টা' },
 ]
 
